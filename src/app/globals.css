@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --space-glow-start: #ef1f1f; /* Vibrant red at top of document (scrollY = 0) */
+  --space-glow-end: #2b6bff;   /* Cosmic blue at bottom of document (scrollY = 100%) */
+  --scroll-progress: 0;
+  --glow-red-opacity: 1;
+  --glow-blue-opacity: 0;
+
+  /* Dynamically calculated single source of truth for all brand/ambient colors */
+  --glow-current: #ef1f1f;
+  --glow-current-rgb: 239, 31, 31;
+  --glow-current-secondary: #ef1f1f;
+  --glow-current-secondary-rgb: 239, 31, 31;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #000000;
+  color: #f3f4f6;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #000000;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Custom Deep Space Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+  border: 2px solid #000000;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--glow-current);
+}
+
+/* Dynamic Scroll Glow Utilities - Driven exclusively by --glow-current */
+.dynamic-glow-text {
+  background: linear-gradient(135deg, #ffffff 0%, var(--glow-current) 55%, var(--glow-current-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dynamic-glow-border {
+  border-color: rgba(255, 255, 255, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.dynamic-glow-border:hover {
+  border-color: var(--glow-current);
+  box-shadow: 0 0 25px -5px var(--glow-current);
+}
+
+.dynamic-glow-button {
+  background: linear-gradient(135deg, var(--glow-current) 0%, var(--glow-current-secondary) 100%);
+  color: #ffffff;
+  box-shadow: 0 0 25px -5px var(--glow-current);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.dynamic-glow-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 35px 2px var(--glow-current);
+  filter: brightness(1.15);
+}
+
+/* Brand badge pill styling driven by --glow-current */
+.glow-badge {
+  background-color: rgba(var(--glow-current-rgb), 0.15);
+  color: var(--glow-current);
+  border: 1px solid rgba(var(--glow-current-rgb), 0.35);
+  box-shadow: 0 0 15px -3px rgba(var(--glow-current-rgb), 0.25);
+}
+
+/* Text accent driven by --glow-current — overrides Tailwind text colors */
+.glow-text-accent {
+  color: var(--glow-current) !important;
+}
+
+/* Background tint driven by --glow-current */
+.glow-bg-accent {
+  background-color: rgba(var(--glow-current-rgb), 0.15);
+  border: 1px solid rgba(var(--glow-current-rgb), 0.3);
+}
+
+.glass-panel {
+  background: rgba(12, 12, 18, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-interactive {
+  background: rgba(12, 12, 18, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel-interactive:hover {
+  background: rgba(20, 20, 30, 0.75);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+/* Hide scrollbar for clean horizontal carousel */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
