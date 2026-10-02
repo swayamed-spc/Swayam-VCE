@@ -1,0 +1,1 @@
+Drop your 7 font files here (.otf .ttf .woff .woff2). Any file name works as long as it contains the font name: milker, pillar, rush, graen, dystopian, eroded, dream.
