@@ -31,7 +31,6 @@ Detailed docs are in the `docs/` folder.
 | `docs/CONTENT_GUIDE.md` | How to edit events, team, stats |
 | `docs/BACKEND_INTEGRATION.md` | Replacing the mocks with a real API |
 | `docs/TROUBLESHOOTING.md` | Common problems and fixes |
-| `docs/GITHUB_ISSUES.md` | Ready-to-paste GitHub issues with labels for the team |
 | `docs/CHANGELOG.md` | Version history |
 
 ## Requirements
@@ -61,6 +60,7 @@ registered automatically. Restart `npm run dev` after adding them.
 | `milker` | Milker | Section headings, nav links |
 | `rush` | Rush Driver Italic | Buttons, taglines, badges |
 | `graen` | Graen Metal | Poster placeholders, cards |
+| `dystopian` | Dystopian Canticle | Marquee, cards |
 | `eroded` | Eroded Personal Use | Stat numbers, cards |
 | `dream` | Dream Kudos | Card titles, avatars |
 
@@ -69,8 +69,8 @@ Some of these fonts are personal use only. Check the licence before publishing.
 
 ## Background effects
 
-Drifting stars that streak in proportion to scroll speed, red sparks that follow the mouse, and two faint animated
-mathematical patterns (a hexagonal tessellation and Sierpinski fractals). See `docs/BACKGROUND_ENGINE.md` to tune them.
+Scrolling flies you through a galaxy: stars streak toward you in proportion to scroll speed, nebulae pass by,
+and six pixel planets approach along the page. The mouse steers the view. See `docs/BACKGROUND_ENGINE.md` to tune it.
 
 ## Change content
 
@@ -94,6 +94,7 @@ swayam-ecell/
     ├── assets/fonts/        font files go here
     ├── context/auth.jsx     mock login and registrations (localStorage)
     ├── data/site.js         all site content
+    ├── assets/logo.png      club logo
     ├── components/          Navbar, Footer, EventCard, RegisterModal, Reveal
     └── pages/               Home, Events, About, Auth, Dashboard
 ```
