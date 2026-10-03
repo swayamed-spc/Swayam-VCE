@@ -22,9 +22,8 @@ export default function Home() {
         <motion.h1 initial={{ opacity: 0, scale: .9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, ease: [.22, 1, .36, 1] }}>SWAYAM</motion.h1>
         <motion.p className="tag" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .6 }}>{club.tagline}</motion.p>
         <motion.div className="cta" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .9 }}>
-          <Link to="/events" className="btn">Explore events</Link><Link to="/signup" className="btn ghost">Join the club</Link>
+          <Link to="/events" className="btn">Explore events</Link>
         </motion.div>
-        <motion.p className="cue" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.3 }}>Scroll to fly through the galaxy ↓</motion.p>
       </div>
     </section>
     <section><div className="wrap stats">{stats.map(s => <Reveal key={s.l}><Count n={s.n} s={s.s} /><span className="muted">{s.l}</span></Reveal>)}</div></section>

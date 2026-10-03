@@ -1,3 +1,5 @@
+> This is the original planning document for the full platform (Next.js + NestJS). The website built so far is a React + Vite app in `frontend/`; the backend described here is not built yet.
+
 # 🎓 E-Cell Event Platform
 
 A modern, full-stack web platform for managing college club events — from discovery and registration to digital ticketing, QR-based attendance, and analytics.

@@ -1,2 +1,14 @@
 node_modules
 dist
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+.vscode
+
+# Font files are licensed per font (some are personal use only): do not commit them
+frontend/src/assets/fonts/*.otf
+frontend/src/assets/fonts/*.ttf
+frontend/src/assets/fonts/*.woff
+frontend/src/assets/fonts/*.woff2

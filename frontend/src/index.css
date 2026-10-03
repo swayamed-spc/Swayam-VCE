@@ -90,8 +90,6 @@ html{background:#000}
 .manifesto{border-left:10px solid var(--red);padding-left:clamp(16px,4vw,48px)}
 .manifesto p{font-size:clamp(48px,11vw,150px);line-height:.98;transition:transform .25s}
 .manifesto p:hover{transform:translateX(18px)}
-.cue{position:relative;margin-top:48px;font-family:var(--f-accent);font-size:20px;color:var(--muted);animation:bob 1.6s ease-in-out infinite}
-@keyframes bob{50%{transform:translateY(10px)}}
 @media(max-width:700px){/* ---- Logo + type variety ---- */
 .hero .tag{font-family:var(--f-accent);font-size:clamp(24px,3.6vw,40px);color:var(--red2)}
 .stats span{font-family:var(--f-accent);font-size:20px}

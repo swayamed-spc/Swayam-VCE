@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.6
+- Removed the "Join the club" button and the scroll hint text from the hero.
+
 ## v1.5
 - Removed the transparent logo image (wordmark text is used instead) and the favicon.
 - Removed galaxy, nebulae and planets. Kept drifting stars, scroll-speed warp streaks, cursor sparks and scroll animation.
