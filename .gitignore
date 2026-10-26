@@ -12,3 +12,6 @@ frontend/src/assets/fonts/*.otf
 frontend/src/assets/fonts/*.ttf
 frontend/src/assets/fonts/*.woff
 frontend/src/assets/fonts/*.woff2
+
+# Uploaded files (UPI QR images)
+backend/uploads/

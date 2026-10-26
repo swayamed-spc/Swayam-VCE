@@ -1,111 +1,137 @@
 # Swayam-VCE
 
-Website and event registration platform for **Swayam**, the college Entrepreneurship Cell. Students browse events, register,
-pay and get QR tickets. Built with React, Vite, Framer Motion and Lenis smooth scrolling, in a red and black space-punk theme.
+Website and event platform for **Swayam**, the Entrepreneurship Cell of Vasavi College of Engineering, Hyderabad.
+Students browse the event archive, register for upcoming events, pay by UPI, and get one QR ticket per event that
+staff scan at the door. Black and amber design.
 
-There is **no admin interface** in the website. Events, team and club details are edited in code by the engineering team,
-and check-in tooling belongs in the backend.
+There is **no admin interface** in the website. Content is edited in code by the engineering team; event management,
+payment verification, check-in and analytics are backend API endpoints used by the team's internal tools.
+
+## Tech stack
+
+**PERN**: PostgreSQL, Express, React, Node.js.
+
+| Layer | Technology |
+|---|---|
+| Frontend | React 18 + Vite 5, React Router 6, plain CSS (one design system file), qrcode.react |
+| Backend | Node.js 20+, Express 5, one API (ES modules) |
+| Database | PostgreSQL on Neon (serverless), accessed with Drizzle ORM |
+| Auth | Custom JWT in an httpOnly cookie, bcrypt; Sign in with Google (Firebase verifies the Google account); password reset links; Cloudflare Turnstile |
+| Payments | Manual UPI: the student pays the club's UPI QR and submits the UTR and amount; staff verify |
 
 ## Status
 
 | Part | State |
 |---|---|
-| `frontend/` | Working site on mock data (login, registration, payment and tickets are simulated) |
-| `backend/` | Not started |
+| `frontend/` | Complete and connected to the API: home, events (upcoming, ongoing, past archive), event pages with registration and UPI payment, about and the 8 wing pages, login and signup (with Google), forgot and reset password, My tickets, QR ticket, profile, 404 |
+| `backend/` | Complete: auth (password, Google, reset), events and seat availability, solo and team registrations, sub-events with pass-holder pricing, manual UPI payments with refund overflow and refunds, master QR tickets and check-in, analytics. 154 live end-to-end checks |
+
+Before launch: send password-reset links by email (they are printed in the server terminal for now), add a real
+Firebase project for Google sign-in, and use production Turnstile keys. See `docs/BACKEND.md`.
 
 ## Repository layout
 
 ```
 Swayam-VCE/
 ├── README.md
-├── .gitignore
-├── docs/                      all documentation (see table below)
-├── backend/                   empty, reserved for the API
+├── docs/                      documentation (see table below)
+│   ├── design/                the reference design mock-up
+│   ├── events/                original event reports (PDF, Word) behind the archive
+│   └── research/              research notes and the saved official VCE page
+├── scripts/content/           Python scripts that built the event archive from the reports
+├── backend/                   Express API
+│   ├── .env.example           copy to .env; never commit .env
+│   ├── src/                   server.js, app.js, db/, middleware/, utils/, modules/
+│   └── tests/live/            end-to-end suites (npm run test:live)
 └── frontend/
-    ├── index.html
-    ├── package.json
-    ├── vite.config.js
-    ├── public/
+    ├── .env.example           copy to .env.local (API URL, Turnstile and Firebase web settings)
+    ├── index.html             fonts, meta
+    ├── vite.config.js         dev proxy: /api -> http://localhost:4000
+    ├── scripts/               content and rendering checks (npm run check:data, check:render)
     └── src/
-        ├── main.jsx           entry: router, auth provider
-        ├── App.jsx            routes, smooth scroll, progress bar
-        ├── index.css          design tokens and all styles
-        ├── fonts.js           auto-loads fonts from assets/fonts
-        ├── assets/fonts/      put font files here
-        ├── context/auth.jsx   mock login and registrations (localStorage)
-        ├── data/site.js       all site content
-        ├── components/        Navbar, Footer, EventCard, RegisterModal, Reveal, SpaceCanvas
-        └── pages/             Home, Events, About, Auth, Dashboard
+        ├── index.css          design tokens and every style
+        ├── api/               API client
+        ├── context/           signed-in user
+        ├── lib/, hooks/       event model, live events, registrations, Google sign-in
+        ├── data/              static content: events.js (archive), site.js (club, team, wings)
+        ├── assets/            event and team photos
+        ├── components/        Navbar, Footer, EventRow, RegisterModal, QrTicket, Turnstile, ...
+        └── pages/             Home, Events, EventDetail, About, DepartmentDetail, Auth, ForgotPassword,
+                               ResetPassword, Dashboard, Ticket, Profile, NotFound
 ```
-Paths starting with `src/` in the docs refer to `frontend/src/`.
+
+> `backend/services/`, `backend/tests/integration/`, `backend/db/` and `backend/docker-compose.yml` are the old
+> three-service backend. They are not part of the PERN stack and are kept only for reference until they are deleted.
 
 ## Run it
 
-Requires Node.js 18+ and npm 9+.
+Requires Node.js 20+ and a Neon database. Start the backend first; the site still shows the event archive without it.
 
 ```bash
+# Backend (terminal 1)
+cd backend
+cp .env.example .env    # set DATABASE_URL, JWT_SECRET, QR_SECRET (TURNSTILE_SECRET test key is pre-filled)
+npm install
+npm run db:push         # create or update the tables in Neon
+npm run db:seed         # optional: test logins admin@, manager@, student@swayam.com (password Password123!)
+npm run dev             # http://localhost:4000/health
+
+# Frontend (terminal 2)
 cd frontend
 npm install
-npm run dev        # http://localhost:5173
-npm run build      # production build in frontend/dist
-npm run preview    # serve the production build locally
+npm run dev             # http://localhost:5173
+```
+
+Optional: copy `frontend/.env.example` to `frontend/.env.local` and add the Firebase web settings to turn on
+"Sign in with Google" (also set `FIREBASE_PROJECT_ID` in `backend/.env`).
+
+## Checks
+
+```bash
+cd backend && npm run test:live      # 3 end-to-end suites against Neon; run before every deployment
+cd frontend && npm run check:data    # event archive integrity and search
+cd frontend && npm run check:render  # every page renders with its content
+cd frontend && npm run build         # production build in frontend/dist
 ```
 
 ## Pages
 
 | Page | Route | Purpose |
 |---|---|---|
-| Home | `/` | Hero, stats, upcoming events, what we do, manifesto, call to action |
-| Events | `/events` | Search and filter by category and price |
-| Event detail | `/events/:slug` | About, schedule, rules, prizes, seat counter, register button |
-| About and team | `/about` | Story timeline and core team |
-| Log in, Sign up | `/login`, `/signup` | Student accounts |
-| My tickets | `/dashboard` | Registrations (protected) |
-| Ticket | `/ticket/:code` | Printable QR ticket (protected) |
-
-## Fonts
-
-Font files are not committed because each has its own licence (some are personal use only). Download them and put them in
-`frontend/src/assets/fonts/` as `.otf`, `.ttf`, `.woff` or `.woff2`. File names can be anything that contains the font name
-(for example `Pillar-Regular.otf`). They load automatically; restart `npm run dev` after adding them. Until then, Google Fonts
-stand-ins are used.
-
-| Name must contain | Font | Used for |
-|---|---|---|
-| `pillar` | Pillar Regular | Hero, page titles |
-| `milker` | Milker | Headings, nav links |
-| `rush` | Rush Driver Italic | Buttons, taglines, badges |
-| `graen` | Graen Metal | Poster names, cards |
-| `eroded` | Eroded Personal Use | Stat numbers, timeline years |
-| `dream` | Dream Kudos | Card titles, avatars |
+| Home | `/` | Hero, Our Vision in Action (8 stages linked to the events behind them), event strip, what we do, speakers, partner with us |
+| Events | `/events`, `/events/upcoming`, `/events/ongoing`, `/events/past` | Tabs, search, category and price filters, expandable rows with seat bars |
+| Event | `/events/:id` | Archive: about, schedule, activities, prizes and winners, gallery, report links. Live: details, seats, solo or team registration, UPI payment proof, and bookable sessions |
+| About | `/about` | Story, vision and mission, journey by year, faculty, leadership, the 8 wings |
+| Wing | `/teams/:id` | Heads, responsibilities, selected work |
+| Log in, Sign up | `/login`, `/signup` | Email and password with CAPTCHA, or Google |
+| Password reset | `/forgot-password`, `/reset-password?token=…` | Request a link, set a new password |
+| Dashboard | `/dashboard` | By role. Student: pending payments, upcoming events with master QR ticket, sessions, past events attended. Event head: their events with pending-payment approval, sessions and scanner. Admin: club-wide analytics, every event, create events |
+| Ticket | `/tickets/:eventId` | The master QR code for an event (signed in) |
+| Profile | `/profile` | Name, email, role; upcoming events with QR codes; past events attended (signed in) |
+| Door scanner | `/admin/scan` | Staff only (ADMIN, EVENT_HEAD): camera QR check-in at the main entrance or a session, with a full-screen green or red result |
 
 ## Editing content
 
-Everything lives in `frontend/src/data/site.js`: club details, stats, events, team and timeline. To add an event, copy an
-existing object in `events` and change its fields. The `slug` becomes the URL and must be unique.
-
-## Background
-
-Drifting stars that streak in proportion to scroll speed, red sparks that follow the mouse, and two faint animated
-mathematical patterns (a hexagonal tessellation and Sierpinski fractals). All motion respects reduced-motion settings.
+Club details and contact, team, wings and the Vision in Action stages are in `frontend/src/data/site.js`; the event archive is in
+`frontend/src/data/events.js`. Live events are created through the API. Full guide: `docs/CONTENT_GUIDE.md`.
 
 ## Documentation
 
 | File | Contents |
 |---|---|
-| `docs/ARCHITECTURE.md` | Stack, folders, routes, registration flow |
-| `docs/DESIGN_SYSTEM.md` | Colours, shapes, motion, accessibility |
-| `docs/FONTS.md` | Font loading, where each font is used, licences |
-| `docs/BACKGROUND_ENGINE.md` | Stars, patterns, scroll force, tuning |
-| `docs/CONTENT_GUIDE.md` | How to edit events, team and stats |
-| `docs/BACKEND_INTEGRATION.md` | Replacing the mocks with a real API |
+| `docs/ARCHITECTURE.md` | How the pieces fit: frontend structure and routes, auth flow, UPI flow, tickets and check-in |
+| `docs/BACKEND.md` | Backend setup, environment variables, database, every API endpoint, Google sign-in, password reset, tests |
+| `docs/DESIGN_SYSTEM.md` | Colours, typography, layout, components, motion, accessibility |
+| `docs/FONTS.md` | The two Google Fonts |
+| `docs/CONTENT_GUIDE.md` | How to edit the archive, team, wings and home page content |
+| `docs/EVENT_SOURCE_INTEGRITY_AUDIT.md` | Which archive facts come from which official source |
 | `docs/TROUBLESHOOTING.md` | Common problems and fixes |
+| `docs/CONTRIBUTING.md` | Branches, commits, pull requests, style |
 | `docs/GITHUB_ISSUES.md` | Ready-to-paste issues with labels |
-| `docs/PROJECT_PLAN.md` | Original full-platform design (Next.js + NestJS) |
+| `docs/PROJECT_PLAN.md` | **Historical.** The original Next.js + NestJS plan; not the current design |
 | `docs/CHANGELOG.md` | Version history |
 
 ## Contributing
 
-1. Branch from `main`: `git checkout -b feature/short-name`
-2. Keep changes in the right folder (`frontend/` or `backend/`)
-3. Open a pull request and link the issue it closes
+Read `docs/CONTRIBUTING.md` before you start. In short: pick an issue, branch from `main`, open a pull request that
+closes the issue, and get a review before merging.

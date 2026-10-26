@@ -1,16 +1,65 @@
-// Mock auth + registrations stored in localStorage. Replace with real API calls later.
-import { createContext, useContext, useEffect, useState } from 'react'
-const Ctx = createContext()
-const load = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) ?? d } catch { return d } }
+// The signed-in user. The session itself is the backend's httpOnly cookie, which JavaScript can't read; this context
+// asks GET /api/auth/me on load and after every login, and keeps the answer.
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
+import { api } from '../api/client'
+
+const AuthContext = createContext(null)
+
 export function AuthProvider({ children }) {
-  const [user, setUser] = useState(() => load('sw_user', null))
-  const [regs, setRegs] = useState(() => load('sw_regs', []))
-  useEffect(() => localStorage.setItem('sw_user', JSON.stringify(user)), [user])
-  useEffect(() => localStorage.setItem('sw_regs', JSON.stringify(regs)), [regs])
-  const register = (ev) => {
-    const r = { code: `SWAYAM-2026-${String(regs.length + 1).padStart(4, '0')}`, slug: ev.slug, at: Date.now() }
-    setRegs([...regs, r]); return r
-  }
-  return <Ctx.Provider value={{ user, login: setUser, logout: () => setUser(null), regs, register }}>{children}</Ctx.Provider>
+  const [user, setUser] = useState(null)
+  const [ready, setReady] = useState(false)
+
+  const refresh = useCallback(async () => {
+    try {
+      const me = await api('/auth/me')
+      setUser(me)
+      return me
+    } catch {
+      setUser(null)
+      return null
+    }
+  }, [])
+
+  useEffect(() => {
+    refresh().finally(() => setReady(true))
+  }, [refresh])
+
+  const value = useMemo(
+    () => ({
+      user,
+      ready,
+      refresh,
+      async login(email, password, turnstileToken) {
+        await api('/auth/login', { method: 'POST', body: { email, password, turnstileToken } })
+        return refresh()
+      },
+      async signup(name, email, password, turnstileToken) {
+        await api('/auth/register', { method: 'POST', body: { email, password, turnstileToken } })
+        // The account exists from here; a failed name update shouldn't look like a failed signup
+        if (name) await api('/auth/me', { method: 'PATCH', body: { name } }).catch(() => {})
+        return refresh()
+      },
+      async googleLogin(idToken) {
+        await api('/auth/google-login', { method: 'POST', body: { idToken } })
+        return refresh()
+      },
+      async updateName(name) {
+        const me = await api('/auth/me', { method: 'PATCH', body: { name } })
+        setUser(me)
+        return me
+      },
+      async logout() {
+        await api('/auth/logout', { method: 'POST' }).catch(() => {})
+        setUser(null)
+      },
+    }),
+    [user, ready, refresh],
+  )
+
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }
-export const useAuth = () => useContext(Ctx)
+
+export const useAuth = () => useContext(AuthContext)
+
+// First name or the part of the email before @, for greetings
+export const displayName = (user) => (user?.name || user?.email?.split('@')[0] || '').split(' ')[0]
