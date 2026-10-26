@@ -1,4 +1,20 @@
-> This is the original planning document for the full platform (Next.js + NestJS). The website built so far is a React + Vite app in `frontend/`; the backend described here is not built yet.
+> [!WARNING]
+> # ⚠️ HISTORICAL DOCUMENT: DO NOT BUILD FROM THIS
+>
+> This is the **original** planning document. It describes the first vision for the platform: a **Next.js** frontend,
+> a **NestJS** backend, Prisma, Redis, BullMQ, Razorpay and other services. **The project no longer follows this plan.**
+>
+> The project has moved to a **PERN stack**:
+> - **Frontend:** React + Vite (`frontend/`)
+> - **Backend:** one Express API on Node.js (`backend/`)
+> - **Database:** Neon serverless PostgreSQL with Drizzle ORM
+> - **Auth:** custom JWT in an httpOnly cookie (no Firebase, no Passport)
+> - **Payments:** manual UPI with screenshot upload and admin verification (no Razorpay)
+>
+> For the current design read `docs/ARCHITECTURE.md` and `docs/BACKEND.md`. Keep this file only as a record of the
+> original feature ideas. Where it disagrees with those documents, those documents are correct.
+
+---
 
 # 🎓 E-Cell Event Platform
 

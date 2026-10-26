@@ -1,32 +1,48 @@
-import { Link, useParams } from 'react-router-dom'
-import { QRCodeSVG } from 'qrcode.react'
-import { useAuth } from '../context/auth'
-import { events, fmt } from '../data/site'
-export function Dashboard() {
-  const { user, regs } = useAuth()
-  return (<div className="wrap page">
-    <h1>Hi, {user.name.split(' ')[0]}</h1>
-    <h2 className="h2" style={{ fontSize: 32 }}>My tickets</h2>
-    {regs.length === 0 ? <><p className="muted" style={{ marginBottom: 16 }}>You have not registered for any event yet.</p><Link to="/events" className="btn">Browse events</Link></> :
-      <div className="grid">{regs.map(r => { const e = events.find(x => x.slug === r.slug); return (
-        <div key={r.code} className="card pad" style={{ padding: 24 }}>
-          <h3 style={{ fontSize: 24 }}>{e.name}</h3><p className="muted">{fmt(e.date)} · {e.venue}</p>
-          <p className="mono" style={{ margin: '8px 0 16px' }}>{r.code}</p><Link to={`/ticket/${r.code}`} className="btn" style={{ fontSize: 16 }}>Open ticket</Link>
-        </div>)})}</div>}
-  </div>)
+// /dashboard: a different dashboard for each role. Students see their tickets and payments; event heads manage the
+// events they created; admins see the whole club. Staff can still reach their own tickets from the "My tickets" tab.
+import { useSearchParams } from 'react-router-dom'
+import { displayName, useAuth } from '../context/auth'
+import StaffDashboard from './dashboard/StaffDashboard'
+import StudentDashboard from './dashboard/StudentDashboard'
+import Refunds from './dashboard/Refunds'
+
+const TITLES = {
+  ADMIN: { eyebrow: 'Admin', intro: 'Club-wide numbers, every event, and the tools to run them.' },
+  EVENT_HEAD: { eyebrow: 'Event manager', intro: 'Your events: approve payments, manage sessions and scan tickets at the door.' },
+  STUDENT: { eyebrow: 'Dashboard', intro: 'Your registrations and tickets. Show your master QR ticket at the entrance.' },
 }
-export function Ticket() {
-  const { code } = useParams(), { regs, user } = useAuth()
-  const r = regs.find(x => x.code === code)
-  if (!r) return <div className="wrap page"><h1>No ticket</h1><Link to="/dashboard" className="btn">Back</Link></div>
-  const e = events.find(x => x.slug === r.slug)
-  return (<div className="wrap page" style={{ maxWidth: 420 }}>
-    <div className="card" style={{ padding: 32, textAlign: 'center' }}>
-      <span className="badge">Confirmed</span>
-      <h2 style={{ fontSize: 36, margin: '12px 0 4px', fontFamily: 'var(--f-head)' }}>{e.name}</h2>
-      <p className="muted">{fmt(e.date)} at {e.time}<br />{e.venue}</p>
-      <div style={{ background: '#fff', padding: 14, display: 'inline-block', margin: '20px 0' }}><QRCodeSVG value={r.code} size={190} /></div>
-      <p className="mono">{r.code}</p><p className="muted">{user.name}</p>
-      <button className="btn" style={{ marginTop: 20 }} onClick={() => window.print()}>Print or save as PDF</button>
-    </div></div>)
+
+export default function Dashboard() {
+  const { user } = useAuth()
+  const [params, setParams] = useSearchParams()
+  const staff = user.role === 'ADMIN' || user.role === 'EVENT_HEAD'
+  const myTickets = staff && params.get('view') === 'tickets'
+  const refunds = staff && params.get('view') === 'refunds'
+  const t = TITLES[user.role] ?? TITLES.STUDENT
+
+  return (
+    <div className="w page">
+      <span className="eyebrow">{t.eyebrow}</span>
+      <h1 className="page-title">Hi, {displayName(user)}</h1>
+      <p className="intro">{myTickets ? TITLES.STUDENT.intro : t.intro}</p>
+
+      {staff && (
+        <div className="chips mt-md" role="group" aria-label="Dashboard view">
+          <button className="chip" aria-pressed={!myTickets && !refunds} onClick={() => setParams({})}>
+            {user.role === 'ADMIN' ? 'Manage the club' : 'Manage events'}
+          </button>
+          <button className="chip" aria-pressed={refunds} onClick={() => setParams({ view: 'refunds' })}>
+            Refunds
+          </button>
+          <button className="chip" aria-pressed={myTickets} onClick={() => setParams({ view: 'tickets' })}>
+            My tickets
+          </button>
+        </div>
+      )}
+
+      <div className="mt-lg">
+        {!staff || myTickets ? <StudentDashboard /> : refunds ? <Refunds /> : <StaffDashboard admin={user.role === 'ADMIN'} />}
+      </div>
+    </div>
+  )
 }

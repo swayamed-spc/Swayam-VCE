@@ -1,13 +1,43 @@
 import { Link } from 'react-router-dom'
 import { club } from '../data/site'
+
+const socials = club.socials.filter((s) => s.u && s.u !== '#')
+
 export default function Footer() {
-  return (<footer><div className="wrap">
-    <div className="grid">
-      <div><div className="logo">SWAY<b>AM</b></div><p className="muted">{club.tagline}</p></div>
-      <div><h3 style={{ fontSize: 26, marginBottom: 8, fontFamily: 'var(--f-head)' }}>Explore</h3><p><Link to="/events">Events</Link></p><p><Link to="/about">About and team</Link></p></div>
-      <div><h3 style={{ fontSize: 26, marginBottom: 8, fontFamily: 'var(--f-head)' }}>Contact</h3><p className="muted">{club.email}</p><p className="muted">{club.phone}</p><p className="muted">{club.address}</p></div>
-      <div><h3 style={{ fontSize: 26, marginBottom: 8, fontFamily: 'var(--f-head)' }}>Follow</h3>{club.socials.map(s => <p key={s.n}><a href={s.u}>{s.n}</a></p>)}</div>
-    </div>
-    <p className="muted" style={{ fontSize: 14 }}>© 2026 Swayam E-Cell</p>
-  </div></footer>)
+  return (
+    <footer className="footer">
+      <div className="w">
+        <div className="footer-grid">
+          <div>
+            <p className="brand">Swayam <small>E-Cell</small></p>
+            <p className="muted mt-sm">{club.tagline}</p>
+          </div>
+          <div>
+            <h3>Explore</h3>
+            <p><Link to="/events/upcoming">Upcoming events</Link></p>
+            <p><Link to="/events/past">Event archive</Link></p>
+            <p><Link to="/about">About and team</Link></p>
+            <p><Link to="/#partner">Partner with us</Link></p>
+          </div>
+          <div>
+            <h3>Contact</h3>
+            <p><a href={`mailto:${club.email}`}>{club.email}</a></p>
+            <p className="muted">{club.phone}</p>
+          </div>
+          {socials.length > 0 && (
+            <div>
+              <h3>Follow</h3>
+              {socials.map((s) => (
+                <p key={s.n}><a href={s.u} target="_blank" rel="noreferrer">{s.n}</a></p>
+              ))}
+            </div>
+          )}
+        </div>
+        <div className="footer-base">
+          <span>© {new Date().getFullYear()} Swayam E-Cell, {club.college}</span>
+          <span>Made in Hyderabad</span>
+        </div>
+      </div>
+    </footer>
+  )
 }

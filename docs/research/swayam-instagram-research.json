@@ -1,0 +1,1490 @@
+{
+  "datasetMetadata": {
+    "source": "Swayam E-Cell VCE Official Instagram (@ecellvce)",
+    "extractedDate": "2026-10-09",
+    "totalUrls": 10,
+    "successfullyAccessed": 10,
+    "couldNotAccess": 0,
+    "methodology": "Automated retrieval of public OpenGraph and embed payloads with visual inspection of retrieved slide media assets. Successfully integrated into production codebase with WebP image assets and validated routes.",
+    "integrationStatus": "COMPLETED",
+    "totalEventsInArchive": 28,
+    "legacyEventsPreserved": 20,
+    "instagramEventsAdded": 8
+  },
+  "posts": [
+    {
+      "index": 1,
+      "postUrl": "https://www.instagram.com/p/DOJVO9QEt5b/?img_index=3&stkn=MXZpbGg0eDF6azhrNw==",
+      "shortcode": "DOJVO9QEt5b",
+      "status": "CONFIRMED FROM POST",
+      "metadata": {
+        "account": "Swayam - ED Cell (@ecellvce)",
+        "ownerUserId": "2937845962",
+        "postId": "3713592754561015387",
+        "publicationDate": "September 3, 2025",
+        "postType": "Carousel (Multi-slide)",
+        "likesCount": 384,
+        "commentsCount": 1,
+        "caption": "ecellvce\nHighlights from our Induction Session!🤩\nFrom understanding how Swayam works to exploring all the departments, juniors got a sneak peek into the exciting journey ahead. 🚀✨\n#orientation\n#education\n#collegelife\n#studentlife\n#university\n#freshers2025\n#edcellorientation\n#newbeginnings\n#campuslife\n#buildingtogether",
+        "hashtags": [
+          "#orientation",
+          "#education",
+          "#collegelife",
+          "#studentlife",
+          "#university",
+          "#freshers2025",
+          "#edcellorientation",
+          "#newbeginnings",
+          "#campuslife",
+          "#buildingtogether"
+        ],
+        "taggedAccounts": [],
+        "mentionedOrganizations": [
+          "Swayam ED Cell (@ecellvce)"
+        ],
+        "mentionedPeople": []
+      },
+      "slides": [
+        {
+          "slideNumber": 1,
+          "status": "CONFIRMED FROM POST",
+          "mediaType": "Event photography (auditorium group photograph)",
+          "readableText": "Not stated",
+          "visibleLogos": "Not stated",
+          "visualObservation": "Auditorium seating tiers filled with junior students; in the foreground, 10+ Swayam E-Cell student leads and coordinators pose smiling with blue college lanyards.",
+          "potentialWebsiteUse": "GALLERY, ABOUT, WHAT_WE_DO"
+        },
+        {
+          "slideNumber": "2+",
+          "status": "COULD NOT ACCESS",
+          "mediaType": "Not stated",
+          "readableText": "Not stated",
+          "visibleLogos": "Not stated",
+          "visualObservation": "Dynamic client-side carousel slides restricted by Instagram session requirements.",
+          "potentialWebsiteUse": "Not stated"
+        }
+      ],
+      "eventOrInitiative": {
+        "title": "Induction Session (Freshers 2025)",
+        "date": "Early September 2025 (Published September 3, 2025)",
+        "time": "Not stated",
+        "venue": "College Auditorium (Visual observation: tiered seating auditorium)",
+        "organizer": "Swayam ED Cell, VCE",
+        "departmentWing": "Not specified in source",
+        "collaborators": "Not stated",
+        "partners": "Not stated",
+        "sponsors": "Not stated",
+        "purpose": "Introduce junior students to Swayam's operational model and explore all departments.",
+        "targetAudience": "Juniors / Freshers (Cohort 2025)",
+        "format": "In-person induction & department walk-through",
+        "activities": [
+          "Understanding how Swayam works",
+          "Department overview and recruitment preview"
+        ],
+        "speakers": [],
+        "participants": "Not stated (Visual observation shows 50+ students in auditorium)",
+        "winners": [],
+        "prizes": "Not stated",
+        "outcomes": "Successful induction of juniors into E-Cell pathways",
+        "registrationInfo": "Not stated"
+      },
+      "people": [],
+      "organizations": [
+        {
+          "name": "Swayam ED Cell",
+          "type": "Student Entrepreneurship Cell",
+          "role": "Organizer"
+        },
+        {
+          "name": "Vasavi College of Engineering (VCE)",
+          "type": "Parent Institution",
+          "role": "Host Institution"
+        }
+      ],
+      "departmentWork": [
+        {
+          "department": "Department not specified in source.",
+          "activity": "Induction session planning and department presentations for freshers.",
+          "status": "CONFIRMED FROM POST"
+        }
+      ],
+      "whatWeDoEvidence": [
+        {
+          "stage": "COMMUNITY ONBOARDING / TALENT SCOUTING",
+          "evidence": "Explaining how Swayam works and introducing departments to new college entrants."
+        }
+      ],
+      "websiteUses": [
+        {
+          "target": "ABOUT",
+          "reason": "Demonstrates regular student recruitment and internal onboarding culture."
+        },
+        {
+          "target": "GALLERY",
+          "reason": "Authentic photograph of team leads with new student intake."
+        }
+      ],
+      "media": [
+        {
+          "slideNumber": 1,
+          "mediaType": "Event photography",
+          "shows": "Team leads with junior attendees in auditorium",
+          "potentialWebsiteUse": "GALLERY / ABOUT"
+        }
+      ],
+      "possibleRelatedPosts": [
+        {
+          "relatedUrlIndex": 2,
+          "relatedShortcode": "DOLtOolkvMW",
+          "explanation": "Post #2 (Orientation 2025 - 26) was published the following day (September 4, 2025), documenting the complementary orientation phase."
+        }
+      ],
+      "missingInformation": [
+        "Exact session timing",
+        "Specific student organizer names",
+        "Specific department responsible"
+      ]
+    },
+    {
+      "index": 2,
+      "postUrl": "https://www.instagram.com/p/DOLtOolkvMW/?img_index=5&stkn=bzk0ejNseXQ1ZDN1",
+      "shortcode": "DOLtOolkvMW",
+      "status": "CONFIRMED FROM POST",
+      "metadata": {
+        "account": "Swayam - ED Cell (@ecellvce)",
+        "ownerUserId": "2937845962",
+        "postId": "3713837943447738262",
+        "publicationDate": "September 4, 2025",
+        "postType": "Carousel (Multi-slide, URL specifies img_index=5)",
+        "likesCount": 307,
+        "commentsCount": 1,
+        "caption": "ecellvce\nGrateful for the energy our new members bring in!🎊\nThe Orientation 2025 - 26 was more than just introductions, it was the beginning of building something extraordinary together. 🥳\n#orientation\n#education\n#collegelife\n#studentlife\n#university\n#freshers2025\n#edcellorientation\n#newbeginnings\n#campuslife\n#buildingtogether",
+        "hashtags": [
+          "#orientation",
+          "#education",
+          "#collegelife",
+          "#studentlife",
+          "#university",
+          "#freshers2025",
+          "#edcellorientation",
+          "#newbeginnings",
+          "#campuslife",
+          "#buildingtogether"
+        ],
+        "taggedAccounts": [],
+        "mentionedOrganizations": [
+          "Swayam ED Cell (@ecellvce)"
+        ],
+        "mentionedPeople": []
+      },
+      "slides": [
+        {
+          "slideNumber": 1,
+          "status": "CONFIRMED FROM POST",
+          "mediaType": "Official promotional graphic / announcement poster",
+          "readableText": "swayam (with bulb logo)\nThe Legacy Continues...\nSWAYAM'S\nORIENTATION 2025 - 26\nEVENTS | INCUBATION | HUMAN RESOURCES",
+          "visibleLogos": "Swayam bulb logo",
+          "visualObservation": "Dark maroon background with topographic isolines; badges prominently indicating specific departments: EVENTS, INCUBATION, HUMAN RESOURCES.",
+          "potentialWebsiteUse": "DEPARTMENT_WORK, EVENTS, WHAT_WE_DO"
+        },
+        {
+          "slideNumber": "2–5",
+          "status": "COULD NOT ACCESS",
+          "mediaType": "Not stated",
+          "readableText": "Not stated",
+          "visibleLogos": "Not stated",
+          "visualObservation": "Dynamic client-side carousel slides restricted by Instagram session requirements.",
+          "potentialWebsiteUse": "Not stated"
+        }
+      ],
+      "eventOrInitiative": {
+        "title": "Orientation 2025 - 26",
+        "date": "September 2025 (Published September 4, 2025)",
+        "time": "Not stated",
+        "venue": "Not stated",
+        "organizer": "Swayam ED Cell, VCE",
+        "departmentWing": "Events, Incubation, Human Resources (Explicitly badged on graphic)",
+        "collaborators": "Not stated",
+        "partners": "Not stated",
+        "sponsors": "Not stated",
+        "purpose": "Formal orientation and welcoming of new members for academic year 2025–26.",
+        "targetAudience": "Newly recruited members (Batch 2025–26)",
+        "format": "Orientation ceremony and team induction",
+        "activities": [
+          "Team introduction",
+          "Cohort initiation"
+        ],
+        "speakers": [],
+        "participants": "Not stated (\"our new members\")",
+        "winners": [],
+        "prizes": "Not stated",
+        "outcomes": "Initiation of the 2025–26 Swayam team",
+        "registrationInfo": "Not stated"
+      },
+      "people": [],
+      "organizations": [
+        {
+          "name": "Swayam ED Cell",
+          "type": "Student Entrepreneurship Cell",
+          "role": "Organizer"
+        }
+      ],
+      "departmentWork": [
+        {
+          "department": "Human Resources",
+          "activity": "Member recruitment and orientation for cohort 2025–26.",
+          "status": "CONFIRMED FROM POST"
+        },
+        {
+          "department": "Events",
+          "activity": "Co-hosting orientation programming.",
+          "status": "CONFIRMED FROM POST"
+        },
+        {
+          "department": "Incubation",
+          "activity": "Represented as primary functional wing during orientation.",
+          "status": "CONFIRMED FROM POST"
+        }
+      ],
+      "whatWeDoEvidence": [
+        {
+          "stage": "ONBOARDING / TEAM MOBILIZATION",
+          "evidence": "\"Orientation 2025 - 26 was more than just introductions, it was the beginning of building something extraordinary together.\""
+        }
+      ],
+      "websiteUses": [
+        {
+          "target": "DEPARTMENT_WORK",
+          "reason": "Direct evidence of Human Resources, Events, and Incubation departments conducting cohort recruitment."
+        },
+        {
+          "target": "EVENTS",
+          "reason": "Records the annual Orientation 2025-26 milestone."
+        }
+      ],
+      "media": [
+        {
+          "slideNumber": 1,
+          "mediaType": "Promotional poster",
+          "shows": "Swayam bulb logo and department badges (Events, Incubation, HR)",
+          "potentialWebsiteUse": "DEPARTMENT_WORK"
+        }
+      ],
+      "possibleRelatedPosts": [
+        {
+          "relatedUrlIndex": 1,
+          "relatedShortcode": "DOJVO9QEt5b",
+          "explanation": "Post #1 documented the induction session for juniors one day prior."
+        }
+      ],
+      "missingInformation": [
+        "Exact venue and time",
+        "Specific breakdown of new recruits"
+      ]
+    },
+    {
+      "index": 3,
+      "postUrl": "https://www.instagram.com/p/DQeqiOjEjC3/?img_index=3&stkn=Zm5nbWRwMmJrYnI=",
+      "shortcode": "DQeqiOjEjC3",
+      "status": "CONFIRMED FROM POST",
+      "metadata": {
+        "account": "Swayam - ED Cell (@ecellvce)",
+        "ownerUserId": "2937845962",
+        "postId": "Not stated",
+        "publicationDate": "October 31, 2025",
+        "postType": "Video reel / Carousel recap",
+        "likesCount": 250,
+        "commentsCount": 0,
+        "caption": "ecellvce\nThank you for making \"Pitch Masters\" a huge success! Grateful to our chief guests, volunteers, and every participant who made it special. Stay tuned for more Swayam E-Cell VCE events! 🌟🙌\n.\n.\n#PitchMasters\n#SwayamEcell\n#InnovationChallenge\n#Futurepreneurs\n#EcellVCE\n#VCEInnovation\n#CampusInnovators\n#StartupMindset\n#ThinkSpeakPerform\n#IdeaToImpact\n#PitchLikeAPro\n#CollegeEventsIndia\n#GenZInnovators\n#InnovationNation\n#DreamBuildDisrupt\n#StudentStartups\n#BusinessPitch\n#EntrepreneurshipEvent\n#InnovationHub\n#CampusReels\n#StartupSpirit\n#DisruptTheFuture\n#BrandStrategist\n#CreativeThinkers\n#nextgeninnovators",
+        "hashtags": [
+          "#PitchMasters",
+          "#SwayamEcell",
+          "#InnovationChallenge",
+          "#Futurepreneurs",
+          "#EcellVCE",
+          "#VCEInnovation",
+          "#CampusInnovators",
+          "#StartupMindset",
+          "#ThinkSpeakPerform",
+          "#IdeaToImpact",
+          "#PitchLikeAPro",
+          "#CollegeEventsIndia",
+          "#GenZInnovators",
+          "#InnovationNation",
+          "#DreamBuildDisrupt",
+          "#StudentStartups",
+          "#BusinessPitch",
+          "#EntrepreneurshipEvent",
+          "#InnovationHub",
+          "#CampusReels",
+          "#StartupSpirit",
+          "#DisruptTheFuture",
+          "#BrandStrategist",
+          "#CreativeThinkers",
+          "#nextgeninnovators"
+        ],
+        "taggedAccounts": [],
+        "mentionedOrganizations": [
+          "Swayam E-Cell VCE"
+        ],
+        "mentionedPeople": []
+      },
+      "slides": [
+        {
+          "slideNumber": 1,
+          "status": "CONFIRMED FROM POST",
+          "mediaType": "Event recap video frame / photography",
+          "readableText": "Not stated",
+          "visibleLogos": "Not stated",
+          "visualObservation": "College seminar hall setting with air conditioning ducting and vertical blinds; a student presenter holds a microphone addressing an attentive audience seated at wooden desks with notebooks and lanyards.",
+          "potentialWebsiteUse": "GALLERY, WHAT_WE_DO, EVENTS"
+        },
+        {
+          "slideNumber": "2+",
+          "status": "COULD NOT ACCESS",
+          "mediaType": "Not stated",
+          "readableText": "Not stated",
+          "visibleLogos": "Not stated",
+          "visualObservation": "Dynamic client-side video slides restricted by Instagram session requirements.",
+          "potentialWebsiteUse": "Not stated"
+        }
+      ],
+      "eventOrInitiative": {
+        "title": "Pitch Masters",
+        "date": "Late October 2025 (Published October 31, 2025)",
+        "time": "Not stated",
+        "venue": "College Seminar Room (Visual observation)",
+        "organizer": "Swayam E-Cell VCE",
+        "departmentWing": "Department not specified in source.",
+        "collaborators": "Not stated",
+        "partners": "Not stated",
+        "sponsors": "Not stated",
+        "purpose": "Student startup pitching competition and innovation challenge.",
+        "targetAudience": "Student entrepreneurs / innovators",
+        "format": "In-person pitching competition before chief guests / judges",
+        "activities": [
+          "Business idea pitching",
+          "Q&A with chief guests"
+        ],
+        "speakers": [],
+        "participants": "Not stated (\"every participant who made it special\")",
+        "winners": [],
+        "prizes": "Not stated",
+        "outcomes": "Successful execution of collegiate pitching challenge",
+        "registrationInfo": "Not stated"
+      },
+      "people": [],
+      "organizations": [
+        {
+          "name": "Swayam E-Cell VCE",
+          "type": "Student Entrepreneurship Cell",
+          "role": "Organizer"
+        }
+      ],
+      "departmentWork": [
+        {
+          "department": "Department not specified in source.",
+          "activity": "Planning and execution of student startup pitching competitions and volunteer management.",
+          "status": "CONFIRMED FROM POST"
+        }
+      ],
+      "whatWeDoEvidence": [
+        {
+          "stage": "COMPETITION / PITCH",
+          "evidence": "Event title \"Pitch Masters\", hashtags #BusinessPitch, #PitchLikeAPro, #IdeaToImpact, with student entrepreneurs pitching before external chief guests."
+        }
+      ],
+      "websiteUses": [
+        {
+          "target": "EVENTS",
+          "reason": "Documents \"Pitch Masters\", a new student competition not currently cataloged in events.js."
+        },
+        {
+          "target": "WHAT_WE_DO",
+          "reason": "Direct proof of the 'Pitch / Competition' phase in Swayam's student founder journey."
+        }
+      ],
+      "media": [
+        {
+          "slideNumber": 1,
+          "mediaType": "Event photography / video frame",
+          "shows": "Student pitch presentation with microphone in seminar hall",
+          "potentialWebsiteUse": "GALLERY"
+        }
+      ],
+      "possibleRelatedPosts": [],
+      "missingInformation": [
+        "Chief guest identities",
+        "Winning teams and prize details",
+        "Specific department responsible"
+      ]
+    },
+    {
+      "index": 4,
+      "postUrl": "https://www.instagram.com/p/DRNEfKlEvAG/?img_index=3&stkn=MW5scTllZnltamI0cQ==",
+      "shortcode": "DRNEfKlEvAG",
+      "status": "CONFIRMED FROM POST",
+      "metadata": {
+        "account": "Swayam - ED Cell (@ecellvce)",
+        "ownerUserId": "2937845962",
+        "postId": "Not stated",
+        "publicationDate": "November 18, 2025",
+        "postType": "Carousel (Multi-slide, URL specifies img_index=3)",
+        "likesCount": 252,
+        "commentsCount": 0,
+        "caption": "ecellvce\n🎉 And with that, E-Plexus successfully ends! 🙌\nA huge thank you to each and every participant for your active involvement that made this event a grand success! 💫\nWe also extend our heartfelt gratitude to all the pillars 💪 who stood strong and ensured this event took place smoothly and without any ambiguities. ❤️\nBut we’re not done yet! 🚀\nThere’s more coming your way, so stay tuned!!!.\n.\n.\n#ThankYouAll\n#EventSuccess\n#TeamworkMakesTheDreamWork\n#Grateful\n#EventWrapUp\n#MissionAccomplished\n#OnwardsAndUpwards\n#StayTuned\n#MoreComingSoon\n#BigThanks\n#BehindTheScenes\n#EventJourney\n#CelebrationMode\n#WeDidIt\n#StrongTeam\n#Unstoppable\n#EventLife\n#MakingItHappen\n#SuccessStory\n#LetsGoNext\n#TheBestIsYetToCome\n#HighFive\n#TogetherWeRise\n#EndOfChapter\n#NewBeginnings\n#StayReady\n#WatchThisSpace\n#NextLevel\n#thankyoueveryone",
+        "hashtags": [
+          "#ThankYouAll",
+          "#EventSuccess",
+          "#TeamworkMakesTheDreamWork",
+          "#Grateful",
+          "#EventWrapUp",
+          "#MissionAccomplished",
+          "#OnwardsAndUpwards",
+          "#StayTuned",
+          "#MoreComingSoon",
+          "#BigThanks",
+          "#BehindTheScenes",
+          "#EventJourney",
+          "#CelebrationMode",
+          "#WeDidIt",
+          "#StrongTeam",
+          "#Unstoppable",
+          "#EventLife",
+          "#MakingItHappen",
+          "#SuccessStory",
+          "#LetsGoNext",
+          "#TheBestIsYetToCome",
+          "#HighFive",
+          "#TogetherWeRise",
+          "#EndOfChapter",
+          "#NewBeginnings",
+          "#StayReady",
+          "#WatchThisSpace",
+          "#NextLevel",
+          "#thankyoueveryone"
+        ],
+        "taggedAccounts": [],
+        "mentionedOrganizations": [
+          "Swayam E-Cell"
+        ],
+        "mentionedPeople": []
+      },
+      "slides": [
+        {
+          "slideNumber": 1,
+          "status": "CONFIRMED FROM POST",
+          "mediaType": "Event photography (high-angle auditorium podium view)",
+          "readableText": "E-PLEXUS\nWelcome to the biggest Innovation Conclave...\n[Slide footer notes date, time, and venue details]",
+          "visibleLogos": "Vasavi College of Engineering logo, Swayam logo, and institutional crest",
+          "visualObservation": "Auditorium packed with students in red tiered seats; in foreground, presenter laptop on desk displaying the title slide 'E-PLEXUS' with gooseneck microphone.",
+          "potentialWebsiteUse": "EVENTS, GALLERY, WHAT_WE_DO"
+        },
+        {
+          "slideNumber": "2+",
+          "status": "COULD NOT ACCESS",
+          "mediaType": "Not stated",
+          "readableText": "Not stated",
+          "visibleLogos": "Not stated",
+          "visualObservation": "Dynamic client-side carousel slides restricted by Instagram session requirements.",
+          "potentialWebsiteUse": "Not stated"
+        }
+      ],
+      "eventOrInitiative": {
+        "title": "E-Plexus",
+        "date": "Mid-November 2025 (Published November 18, 2025)",
+        "time": "Not stated in caption (Slide suggests daytime program)",
+        "venue": "College Auditorium (Visual observation)",
+        "organizer": "Swayam E-Cell, VCE",
+        "departmentWing": "Department not specified in source.",
+        "collaborators": "Not stated",
+        "partners": "Not stated",
+        "sponsors": "Not stated",
+        "purpose": "Flagship Innovation Conclave assembling students for multi-track activities.",
+        "targetAudience": "College student innovators and participants",
+        "format": "Multi-track in-person innovation conclave",
+        "activities": [
+          "Innovation conclave sessions",
+          "Auditorium keynote and challenges"
+        ],
+        "speakers": [],
+        "participants": "Not stated (\"each and every participant\")",
+        "winners": [],
+        "prizes": "Not stated",
+        "outcomes": "Grand success wrap-up of flagship conclave",
+        "registrationInfo": "Not stated"
+      },
+      "people": [],
+      "organizations": [
+        {
+          "name": "Swayam E-Cell",
+          "type": "Student Entrepreneurship Cell",
+          "role": "Organizer"
+        },
+        {
+          "name": "Vasavi College of Engineering",
+          "type": "Institution",
+          "role": "Host"
+        }
+      ],
+      "departmentWork": [
+        {
+          "department": "Department not specified in source.",
+          "activity": "Large-scale conclave coordination, stage production, and attendee mobilization.",
+          "status": "CONFIRMED FROM POST"
+        }
+      ],
+      "whatWeDoEvidence": [
+        {
+          "stage": "INNOVATION CONCLAVE / INDUSTRY EXPOSURE",
+          "evidence": "Presentation slide defines E-Plexus as \"the biggest Innovation Conclave\" held in the auditorium."
+        }
+      ],
+      "websiteUses": [
+        {
+          "target": "EVENTS",
+          "reason": "Documents major flagship event \"E-Plexus\" (November 2025) not currently represented on website."
+        },
+        {
+          "target": "GALLERY",
+          "reason": "High-quality auditorium photograph showing the presenter deck and attendees."
+        }
+      ],
+      "media": [
+        {
+          "slideNumber": 1,
+          "mediaType": "Event photography",
+          "shows": "Auditorium staging and E-Plexus title presentation slide",
+          "potentialWebsiteUse": "EVENTS / GALLERY"
+        }
+      ],
+      "possibleRelatedPosts": [],
+      "missingInformation": [
+        "Individual speaker or guest identities",
+        "Specific competition tracks within E-Plexus",
+        "Numerical participant headcount"
+      ]
+    },
+    {
+      "index": 5,
+      "postUrl": "https://www.instagram.com/p/DZ44HC4BkzI/?stkn=MXR6amJwdTY3bmcxeA==",
+      "shortcode": "DZ44HC4BkzI",
+      "status": "CONFIRMED FROM POST",
+      "metadata": {
+        "account": "Swayam - ED Cell (@ecellvce)",
+        "ownerUserId": "2937845962",
+        "postId": "Not stated",
+        "publicationDate": "June 22, 2026",
+        "postType": "Single Image Announcement",
+        "likesCount": 18,
+        "commentsCount": 0,
+        "caption": "ecellvce\n💡 Innovate & Invest: Strategic Finance for Tech Minds 💡\nHey everyone! If you are working on a tech idea or planning to launch a startup, this one is for you. We are hosting an online seminar focused on the financial side of building a business. 🚀\nWe are really excited to have Mr. Bhargav Reddy joining us. He is the Founding Partner at MintCircle, and he will be sharing some great practical strategies on how to manage and scale your finances as a founder. 🧠📈\n📅 Date: June 23, 2026\n⏰ Time: 6:00 PM\n🌐 Format: Online Seminar\nIt is going to be a great session to learn, get inspired, and pick up some real-world advice. 🤝✨\n🔗 Register Now! The link to sign up is right in our bio. Hope to see you there!\n#startupindia\n#entrepreneurship\n#foundertalk\n#innovationdriven\n#learnandgrowtogether",
+        "hashtags": [
+          "#startupindia",
+          "#entrepreneurship",
+          "#foundertalk",
+          "#innovationdriven",
+          "#learnandgrowtogether"
+        ],
+        "taggedAccounts": [],
+        "mentionedOrganizations": [
+          "MintCircle"
+        ],
+        "mentionedPeople": [
+          "Mr. Bhargav Reddy"
+        ]
+      },
+      "slides": [
+        {
+          "slideNumber": 1,
+          "status": "CONFIRMED FROM POST",
+          "mediaType": "Official promotional poster (1440x1800 high-res)",
+          "readableText": "Innovate & Invest: Strategic Finance for Tech Minds\nPioneering Financial Strategies for Tomorrow's Founders\nBhargav Reddy\nFounding partner -MintCircle\n\"Learn from the Best & Be the Next.\"\nRegister Now !!\n23rd june 2026\n6:00 Pm\nonline seminar\n@ecellvce | Link in Bio.",
+          "visibleLogos": "Vasavi College of Engineering logo (top left), Swayam bulb logo (top right)",
+          "visualObservation": "Dark blue sleek poster with portrait of speaker Bhargav Reddy in a suit jacket and collared shirt.",
+          "potentialWebsiteUse": "EVENTS, SPEAKERS, PARTNERSHIPS"
+        }
+      ],
+      "eventOrInitiative": {
+        "title": "Innovate & Invest: Strategic Finance for Tech Minds",
+        "date": "June 23, 2026",
+        "time": "6:00 PM",
+        "venue": "Online Seminar (Platform link in bio)",
+        "organizer": "Swayam ED Cell, VCE",
+        "departmentWing": "Department not specified in source.",
+        "collaborators": "MintCircle",
+        "partners": "MintCircle",
+        "sponsors": "Not stated",
+        "purpose": "Focus on the financial side of building a business, managing and scaling finances as a founder.",
+        "targetAudience": "Students working on a tech idea or planning to launch a startup",
+        "format": "Online Seminar / Interactive Webinar",
+        "activities": [
+          "Practical financial strategies for tech founders",
+          "Managing and scaling early venture finances",
+          "Founder Q&A"
+        ],
+        "speakers": [
+          {
+            "name": "Bhargav Reddy",
+            "designation": "Founding partner -MintCircle",
+            "organization": "MintCircle",
+            "role": "Featured Speaker"
+          }
+        ],
+        "participants": "Not stated",
+        "winners": [],
+        "prizes": "Not stated",
+        "outcomes": "Financial management knowledge transfer for student tech entrepreneurs",
+        "registrationInfo": "Link in bio"
+      },
+      "people": [
+        {
+          "name": "Bhargav Reddy",
+          "designation": "Founding partner -MintCircle",
+          "company": "MintCircle",
+          "role": "Speaker / Mentor"
+        }
+      ],
+      "organizations": [
+        {
+          "name": "MintCircle",
+          "type": "Venture / Financial Advisory Firm",
+          "role": "Partner / Speaker Organization"
+        },
+        {
+          "name": "Vasavi College of Engineering",
+          "type": "Educational Institution",
+          "role": "Host"
+        },
+        {
+          "name": "Swayam ED Cell",
+          "type": "Entrepreneurship Cell",
+          "role": "Organizer"
+        }
+      ],
+      "departmentWork": [
+        {
+          "department": "Department not specified in source.",
+          "activity": "Designing and hosting virtual financial literacy masterclasses for student tech founders.",
+          "status": "CONFIRMED FROM POST"
+        }
+      ],
+      "whatWeDoEvidence": [
+        {
+          "stage": "MENTORSHIP / FINANCIAL EDUCATION / SCALING",
+          "evidence": "\"sharing some great practical strategies on how to manage and scale your finances as a founder.\""
+        }
+      ],
+      "websiteUses": [
+        {
+          "target": "EVENTS",
+          "reason": "Documents June 2026 virtual founder talk."
+        },
+        {
+          "target": "SPEAKERS",
+          "reason": "Adds Bhargav Reddy (Founding Partner, MintCircle) to verified speaker network."
+        },
+        {
+          "target": "PARTNERSHIPS",
+          "reason": "MintCircle collaboration."
+        }
+      ],
+      "media": [
+        {
+          "slideNumber": 1,
+          "mediaType": "Promotional poster",
+          "shows": "Portrait of Bhargav Reddy with event agenda details",
+          "potentialWebsiteUse": "SPEAKERS / EVENTS"
+        }
+      ],
+      "possibleRelatedPosts": [
+        {
+          "relatedUrlIndex": 6,
+          "relatedShortcode": "DZ99jB9hRC8",
+          "explanation": "Published in the same June 2026 virtual founder-talk series (Post #6 held one week later on June 30, 2026)."
+        }
+      ],
+      "missingInformation": [
+        "Seminar webinar platform link (Google Meet / Zoom)",
+        "Attendee headcount"
+      ]
+    },
+    {
+      "index": 6,
+      "postUrl": "https://www.instagram.com/p/DZ99jB9hRC8/?stkn=MWU2MHkwd3BwZ2Ri",
+      "shortcode": "DZ99jB9hRC8",
+      "status": "CONFIRMED FROM POST",
+      "metadata": {
+        "account": "Swayam - ED Cell (@ecellvce)",
+        "ownerUserId": "2937845962",
+        "postId": "Not stated",
+        "publicationDate": "June 24, 2026",
+        "postType": "Single Image Announcement",
+        "likesCount": 16,
+        "commentsCount": 0,
+        "caption": "ecellvce\n💡 The Founder’s Narrative: From Idea to Impact\nWhat does it truly take to build a startup from the ground up?\nJoin us for an exclusive online seminar with Alfred Lazarus, Co-founder and CVO of Zero Moblt, as he shares his personal journey and invaluable insights on mastering founder-market fit and navigating the art of the start.\nWhether you are an aspiring entrepreneur or simply curious about the startup ecosystem, this session is designed to inspire you to write your own narrative.\n📅 Date: 30th June 2026🕕\nTime: 6:00 PM📍\nPlatform: Online Seminar\n✨ Secure your spot today!\n🔗 Registration link in the bio!!\n#entrepreneurgoals\n#foundertalk",
+        "hashtags": [
+          "#entrepreneurgoals",
+          "#foundertalk"
+        ],
+        "taggedAccounts": [],
+        "mentionedOrganizations": [
+          "Zero Moblt"
+        ],
+        "mentionedPeople": [
+          "Alfred Lazarus"
+        ]
+      },
+      "slides": [
+        {
+          "slideNumber": 1,
+          "status": "CONFIRMED FROM POST",
+          "mediaType": "Official promotional poster (1440x1800 high-res)",
+          "readableText": "The Founder's Narrative\nIdea to impact, at the speed of conviction.\nMastering founder-market fit and the art of the start.\nAlfred Lazarus\nCo-founder and CVO-Zero Moblt\n\"Witness the Journey. Write Your Own.\"\nRegister Now !!\n30th june 2026\n6:00 Pm\nonline seminar\n@ecellvce | Link in Bio.",
+          "visibleLogos": "Vasavi College of Engineering logo (top left), Swayam bulb logo (top right)",
+          "visualObservation": "Dark blue minimalist poster featuring Alfred Lazarus seated with microphone in a white graphic t-shirt.",
+          "potentialWebsiteUse": "EVENTS, SPEAKERS, PARTNERSHIPS"
+        }
+      ],
+      "eventOrInitiative": {
+        "title": "The Founder's Narrative: From Idea to Impact",
+        "date": "30th June 2026",
+        "time": "6:00 PM",
+        "venue": "Online Seminar",
+        "organizer": "Swayam ED Cell, VCE",
+        "departmentWing": "Department not specified in source.",
+        "collaborators": "Zero Moblt",
+        "partners": "Zero Moblt",
+        "sponsors": "Not stated",
+        "purpose": "Insights on mastering founder-market fit and navigating the early startup journey from idea to impact.",
+        "targetAudience": "Aspiring entrepreneurs and students curious about startup ecosystem",
+        "format": "Online Seminar / Founder Keynote",
+        "activities": [
+          "Founder journey narrative",
+          "Mastering founder-market fit",
+          "The art of the start"
+        ],
+        "speakers": [
+          {
+            "name": "Alfred Lazarus",
+            "designation": "Co-founder and CVO-Zero Moblt",
+            "organization": "Zero Moblt",
+            "role": "Keynote Speaker"
+          }
+        ],
+        "participants": "Not stated",
+        "winners": [],
+        "prizes": "Not stated",
+        "outcomes": "Understanding early startup viability and founder mindset",
+        "registrationInfo": "Link in bio"
+      },
+      "people": [
+        {
+          "name": "Alfred Lazarus",
+          "designation": "Co-founder and CVO-Zero Moblt",
+          "company": "Zero Moblt",
+          "role": "Speaker"
+        }
+      ],
+      "organizations": [
+        {
+          "name": "Zero Moblt",
+          "type": "EV / Mobility Tech Venture",
+          "role": "Partner / Speaker Organization"
+        },
+        {
+          "name": "Vasavi College of Engineering",
+          "type": "Institution",
+          "role": "Host"
+        },
+        {
+          "name": "Swayam ED Cell",
+          "type": "Entrepreneurship Cell",
+          "role": "Organizer"
+        }
+      ],
+      "departmentWork": [
+        {
+          "department": "Department not specified in source.",
+          "activity": "Curating and executing founder talk series and digital media promotion.",
+          "status": "CONFIRMED FROM POST"
+        }
+      ],
+      "whatWeDoEvidence": [
+        {
+          "stage": "IDEA / FOUNDER-MARKET FIT",
+          "evidence": "\"mastering founder-market fit and navigating the art of the start... building a startup from the ground up.\""
+        }
+      ],
+      "websiteUses": [
+        {
+          "target": "EVENTS",
+          "reason": "Documents June 30, 2026 founder talk."
+        },
+        {
+          "target": "SPEAKERS",
+          "reason": "Verifies Alfred Lazarus (Co-founder & CVO, Zero Moblt) in Swayam's speaker network."
+        },
+        {
+          "target": "PARTNERSHIPS",
+          "reason": "Zero Moblt corporate partnership."
+        }
+      ],
+      "media": [
+        {
+          "slideNumber": 1,
+          "mediaType": "Promotional poster",
+          "shows": "Alfred Lazarus seated with microphone",
+          "potentialWebsiteUse": "SPEAKERS / EVENTS"
+        }
+      ],
+      "possibleRelatedPosts": [
+        {
+          "relatedUrlIndex": 7,
+          "relatedShortcode": "DdB7KDXknxi",
+          "explanation": "Alfred Lazarus reappears as Guest Speaker in Post #7 for The Founders Council 2.0 in September 2026."
+        },
+        {
+          "relatedUrlIndex": 9,
+          "relatedShortcode": "DdOOiIElAyE",
+          "explanation": "Founder's Council 2.0 wrap-up post features the live panel Alfred Lazarus judged."
+        }
+      ],
+      "missingInformation": [
+        "Webinar platform link",
+        "Attendee headcount"
+      ]
+    },
+    {
+      "index": 7,
+      "postUrl": "https://www.instagram.com/p/DdB7KDXknxi/?img_index=2&stkn=ems3aDhoaDVtdTJ0",
+      "shortcode": "DdB7KDXknxi",
+      "status": "CONFIRMED FROM POST",
+      "metadata": {
+        "account": "Swayam - ED Cell (@ecellvce)",
+        "ownerUserId": "2937845962",
+        "postId": "Not stated",
+        "publicationDate": "September 8, 2026",
+        "postType": "Carousel (Speaker Reveal, URL specifies img_index=2)",
+        "likesCount": 57,
+        "commentsCount": 0,
+        "caption": "ecellvce\nLeadership isn't just about making decisions—it's about making the right ones under pressure.\nSwayam E-Cell VCE is honoured to welcome Alfred Lazarus, Co-founder & CVO of Zero Moblt, as the Guest Speaker for The Founders Council 2.0 and\nRudhvik Dharamkar , the Founder & CEO of Fleckor Tech and Managing Partner at Telangana Chronicle.\nAs teams step into the shoes of industry leaders, represent leading companies, tackle real-time business crises, and defend their strategies in a boardroom-style debate.\nWhether you're competing or looking to learn from a founder's perspective, this is an opportunity you won't want to miss.\n📅 10 September 2026\nThe boardroom is set. The challenge awaits.\nSee you at The Founders Council 2.0! ✨",
+        "hashtags": [],
+        "taggedAccounts": [],
+        "mentionedOrganizations": [
+          "Zero Moblt",
+          "Fleckor Tech",
+          "Telangana Chronicle"
+        ],
+        "mentionedPeople": [
+          "Alfred Lazarus",
+          "Rudhvik Dharamkar"
+        ]
+      },
+      "slides": [
+        {
+          "slideNumber": 2,
+          "status": "CONFIRMED FROM POST",
+          "mediaType": "Official guest reveal poster (1440x1800 high-res)",
+          "readableText": "THE FOUNDER'S COUNCIL\nMEET THE GUEST\nFounder of Zero Moblt\nAlfred (Apantrue) Lazarus\n@ecellvce",
+          "visibleLogos": "Vasavi College of Engineering logo (top left), Swayam bulb logo (top center), INSTITUTION'S INNOVATION COUNCIL (Ministry of Education Initiative) logo (top right)",
+          "visualObservation": "Dark teal background with lighting spotlight on Alfred Lazarus speaking into a handheld microphone.",
+          "potentialWebsiteUse": "EVENTS, SPEAKERS, PARTNERSHIPS"
+        },
+        {
+          "slideNumber": "1, 3+",
+          "status": "COULD NOT ACCESS",
+          "mediaType": "Not stated",
+          "readableText": "Not stated",
+          "visibleLogos": "Not stated",
+          "visualObservation": "Slide 1 represents event cover; Slide 3 represents reveal poster for Rudhvik Dharamkar (described in caption). Unaccessed due to client-side session requirements.",
+          "potentialWebsiteUse": "SPEAKERS"
+        }
+      ],
+      "eventOrInitiative": {
+        "title": "The Founders Council 2.0",
+        "date": "10 September 2026",
+        "time": "Not stated",
+        "venue": "College Boardroom / Auditorium",
+        "organizer": "Swayam E-Cell VCE",
+        "departmentWing": "Department not specified in source.",
+        "collaborators": [
+          "Institution's Innovation Council (IIC)",
+          "Zero Moblt",
+          "Fleckor Tech",
+          "Telangana Chronicle"
+        ],
+        "partners": [
+          "Zero Moblt",
+          "Fleckor Tech",
+          "Telangana Chronicle"
+        ],
+        "sponsors": "Not stated",
+        "purpose": "Boardroom-style crisis simulation debate where student teams represent leading companies, tackle real-time business crises, and defend corporate strategies under pressure.",
+        "targetAudience": "Student debaters, leaders, and aspiring startup founders",
+        "format": "In-person boardroom debate & crisis simulation competition",
+        "activities": [
+          "Stepping into shoes of industry leaders",
+          "Representing major corporate entities",
+          "Real-time business crisis solving",
+          "Boardroom defense & debate before founders"
+        ],
+        "speakers": [
+          {
+            "name": "Alfred (Apantrue) Lazarus",
+            "designation": "Co-founder & CVO of Zero Moblt (Founder of Zero Moblt)",
+            "organization": "Zero Moblt",
+            "role": "Guest Speaker / Judge"
+          },
+          {
+            "name": "Rudhvik Dharamkar",
+            "designation": "Founder & CEO of Fleckor Tech and Managing Partner at Telangana Chronicle",
+            "organization": "Fleckor Tech / Telangana Chronicle",
+            "role": "Guest Speaker / Judge"
+          }
+        ],
+        "participants": "Not stated (\"teams step into the shoes of industry leaders\")",
+        "winners": [],
+        "prizes": "Not stated",
+        "outcomes": "Real-time decision making under pressure and strategic defense",
+        "registrationInfo": "Not stated"
+      },
+      "people": [
+        {
+          "name": "Alfred (Apantrue) Lazarus",
+          "designation": "Co-founder & CVO of Zero Moblt",
+          "company": "Zero Moblt",
+          "role": "Guest Speaker / Panelist"
+        },
+        {
+          "name": "Rudhvik Dharamkar",
+          "designation": "Founder & CEO of Fleckor Tech and Managing Partner at Telangana Chronicle",
+          "company": "Fleckor Tech / Telangana Chronicle",
+          "role": "Guest Speaker / Panelist"
+        }
+      ],
+      "organizations": [
+        {
+          "name": "Zero Moblt",
+          "type": "EV / Tech Enterprise",
+          "role": "Industry Partner"
+        },
+        {
+          "name": "Fleckor Tech",
+          "type": "Technology Enterprise",
+          "role": "Industry Partner"
+        },
+        {
+          "name": "Telangana Chronicle",
+          "type": "Media Organization",
+          "role": "Media / Industry Partner"
+        },
+        {
+          "name": "Institution's Innovation Council (IIC)",
+          "type": "Government/Institutional Council (Ministry of Education)",
+          "role": "Institutional Collaborator"
+        },
+        {
+          "name": "Vasavi College of Engineering",
+          "type": "Host Institution",
+          "role": "Host"
+        },
+        {
+          "name": "Swayam E-Cell",
+          "type": "Entrepreneurship Cell",
+          "role": "Organizer"
+        }
+      ],
+      "departmentWork": [
+        {
+          "department": "Department not specified in source.",
+          "activity": "Executing high-stakes business crisis simulations, securing industry founders as judges, collaborating with IIC.",
+          "status": "CONFIRMED FROM POST"
+        }
+      ],
+      "whatWeDoEvidence": [
+        {
+          "stage": "COMPETITION / CRISIS SIMULATION / STRATEGY",
+          "evidence": "\"teams step into the shoes of industry leaders, represent leading companies, tackle real-time business crises, and defend their strategies in a boardroom-style debate.\""
+        }
+      ],
+      "websiteUses": [
+        {
+          "target": "EVENTS",
+          "reason": "Documents \"The Founders Council 2.0\" flagship competition."
+        },
+        {
+          "target": "SPEAKERS",
+          "reason": "Adds Rudhvik Dharamkar and Alfred Lazarus to official speakers."
+        },
+        {
+          "target": "PARTNERSHIPS",
+          "reason": "Confirms Fleckor Tech, Telangana Chronicle, Zero Moblt, and IIC collaborations."
+        }
+      ],
+      "media": [
+        {
+          "slideNumber": 2,
+          "mediaType": "Promotional poster / speaker reveal",
+          "shows": "Alfred Lazarus with IIC and Swayam logos",
+          "potentialWebsiteUse": "SPEAKERS / EVENTS"
+        }
+      ],
+      "possibleRelatedPosts": [
+        {
+          "relatedUrlIndex": 9,
+          "relatedShortcode": "DdOOiIElAyE",
+          "explanation": "Post #9 is the official post-event wrap-up of this exact competition held on September 10, 2026."
+        },
+        {
+          "relatedUrlIndex": 6,
+          "relatedShortcode": "DZ99jB9hRC8",
+          "explanation": "Post #6 was an earlier standalone webinar featuring Alfred Lazarus."
+        }
+      ],
+      "missingInformation": [
+        "Exact competition timing and room number",
+        "Prize amounts or winning team identities"
+      ]
+    },
+    {
+      "index": 8,
+      "postUrl": "https://www.instagram.com/p/DcfqhWDxhka/?stkn=NTZzdmU5amxkbG4z",
+      "shortcode": "DcfqhWDxhka",
+      "status": "CONFIRMED FROM POST",
+      "metadata": {
+        "account": "Swayam - ED Cell (@ecellvce)",
+        "ownerUserId": "2937845962",
+        "postId": "Not stated",
+        "publicationDate": "August 26, 2026",
+        "postType": "Single Image Announcement",
+        "likesCount": 25,
+        "commentsCount": 0,
+        "caption": "ecellvce\n🚀 Ready to turn your ideas into impactful ventures?\nJoin us for DEEP-TECH MVP & LEAN START-UP, an exclusive mentoring session for aspiring entrepreneurs with Sourav Karmakar, TEDx Speaker and Founder & CEO of Infinostech.\n✨ Learn about:\n• Idea Validation\n• Deep-Tech MVP\n• Lean Start-up\n• Business & Mentoring\n📅 30 August 2026\n🕚 11:00 AM\n💻 Online Session\n🔗 Registeration link in bio",
+        "hashtags": [],
+        "taggedAccounts": [],
+        "mentionedOrganizations": [
+          "Infinostech"
+        ],
+        "mentionedPeople": [
+          "Sourav Karmakar"
+        ]
+      },
+      "slides": [
+        {
+          "slideNumber": 1,
+          "status": "CONFIRMED FROM POST",
+          "mediaType": "Official promotional poster (1440x1920 high-res)",
+          "readableText": "PRESENTS\nDEEP-TECH MVP & LEAN START-UP\nA Mentoring Session For Aspiring Entrepreneurs\nSOURAV KARMAKAR\nTEDx Speaker | Founder & CEO of Infinostech | Mentor\nWHAT YOU'LL LEARN:\n• Idea Validation\n• Deep-Tech MVP\n• Lean Start-up\n• Business & Mentoring\n30 AUGUST 2026 | 11:00 AM | Online Session\nRegistration link In the Bio\n@ecellvce",
+          "visibleLogos": "Vasavi College of Engineering logo (top left), Swayam bulb logo (top center), INSTITUTION'S INNOVATION COUNCIL (Ministry of HRD Initiative) logo (top right)",
+          "visualObservation": "Dark maroon-red background; photo of Sourav Karmakar speaking into a headset microphone with both hands gesturing.",
+          "potentialWebsiteUse": "EVENTS, SPEAKERS, PARTNERSHIPS, WHAT_WE_DO"
+        }
+      ],
+      "eventOrInitiative": {
+        "title": "DEEP-TECH MVP & LEAN START-UP",
+        "date": "30 August 2026",
+        "time": "11:00 AM",
+        "venue": "Online Session",
+        "organizer": "Swayam ED Cell, VCE",
+        "departmentWing": "Department not specified in source.",
+        "collaborators": [
+          "Institution's Innovation Council (IIC)",
+          "Infinostech"
+        ],
+        "partners": [
+          "Infinostech"
+        ],
+        "sponsors": "Not stated",
+        "purpose": "Mentoring session for aspiring entrepreneurs to transform concepts into scalable deep-tech ventures using lean methodologies.",
+        "targetAudience": "Aspiring student entrepreneurs and tech builders",
+        "format": "Online Mentoring Session",
+        "activities": [
+          "Idea Validation frameworks",
+          "Deep-Tech MVP development",
+          "Lean Start-up principles",
+          "Business & Mentoring guidance"
+        ],
+        "speakers": [
+          {
+            "name": "Sourav Karmakar",
+            "designation": "TEDx Speaker | Founder & CEO of Infinostech | Mentor",
+            "organization": "Infinostech",
+            "role": "Mentor / Speaker"
+          }
+        ],
+        "participants": "Not stated",
+        "winners": [],
+        "prizes": "Not stated",
+        "outcomes": "Practical masterclass in prototyping deep-tech products and rapid validation",
+        "registrationInfo": "Registration link in bio"
+      },
+      "people": [
+        {
+          "name": "Sourav Karmakar",
+          "designation": "TEDx Speaker | Founder & CEO of Infinostech | Mentor",
+          "company": "Infinostech",
+          "role": "Featured Mentor / Speaker"
+        }
+      ],
+      "organizations": [
+        {
+          "name": "Infinostech",
+          "type": "Deep-Tech Enterprise",
+          "role": "Partner / Speaker Organization"
+        },
+        {
+          "name": "Institution's Innovation Council (IIC)",
+          "type": "Institutional Innovation Council",
+          "role": "Collaborator"
+        },
+        {
+          "name": "Vasavi College of Engineering",
+          "type": "Institution",
+          "role": "Host"
+        },
+        {
+          "name": "Swayam ED Cell",
+          "type": "Entrepreneurship Cell",
+          "role": "Organizer"
+        }
+      ],
+      "departmentWork": [
+        {
+          "department": "Department not specified in source.",
+          "activity": "Coordinating deep-tech and MVP masterclasses under IIC aegis.",
+          "status": "CONFIRMED FROM POST"
+        }
+      ],
+      "whatWeDoEvidence": [
+        {
+          "stage": "VALIDATION / BUILD (MVP) / MENTORSHIP",
+          "evidence": "Covers Idea Validation, Deep-Tech MVP construction, Lean Start-up methodologies, and venture mentoring."
+        }
+      ],
+      "websiteUses": [
+        {
+          "target": "EVENTS",
+          "reason": "Documents August 30, 2026 masterclass."
+        },
+        {
+          "target": "SPEAKERS",
+          "reason": "Adds Sourav Karmakar (Founder & CEO, Infinostech) to speaker directory."
+        },
+        {
+          "target": "WHAT_WE_DO",
+          "reason": "Core evidence for the 'Validate' and 'Prototype/MVP' student journey steps."
+        }
+      ],
+      "media": [
+        {
+          "slideNumber": 1,
+          "mediaType": "Promotional poster",
+          "shows": "Sourav Karmakar with headset microphone and curriculum syllabus",
+          "potentialWebsiteUse": "SPEAKERS / EVENTS"
+        }
+      ],
+      "possibleRelatedPosts": [],
+      "missingInformation": [
+        "Online webinar platform details",
+        "Headcount of registered students"
+      ]
+    },
+    {
+      "index": 9,
+      "postUrl": "https://www.instagram.com/p/DdOOiIElAyE/?img_index=2&stkn=dWFoa2hseHhwZ2d3",
+      "shortcode": "DdOOiIElAyE",
+      "status": "CONFIRMED FROM POST",
+      "metadata": {
+        "account": "Swayam - ED Cell (@ecellvce)",
+        "ownerUserId": "2937845962",
+        "postId": "Not stated",
+        "publicationDate": "September 13, 2026",
+        "postType": "Carousel (Recap Collage, URL specifies img_index=2)",
+        "likesCount": 183,
+        "commentsCount": 0,
+        "caption": "ecellvce\n\"Founder's Council 2.0\" has wrapped up. 🎬\nThis wasn't just another routine seminar. The energy in the room, the questions, and the panel's breakdowns were on a completely different level. 🔥\nThat was the vibe at Founder’s Council 2.0 by E-Cell VCE. Real questions, unfiltered feedback, and practical takeaways from the panel. The session was all about validating ideas and building from the ground up. 💡\nFrom conceptual pitches to candid mentorship and strategic feedback, the event offered participants practical perspectives on validating ideas and navigating early-stage execution.\nGrateful to our panelists for their time and guidance. ✨\nThanks to everyone who pulled up to make the hall packed. 🤝\nExciting times ahead.\n#SwayamECell\n#TheFoundersCouncil\n#VCE\n#Entrepreneurship\n#Leadership",
+        "hashtags": [
+          "#SwayamECell",
+          "#TheFoundersCouncil",
+          "#VCE",
+          "#Entrepreneurship",
+          "#Leadership"
+        ],
+        "taggedAccounts": [],
+        "mentionedOrganizations": [
+          "E-Cell VCE"
+        ],
+        "mentionedPeople": []
+      },
+      "slides": [
+        {
+          "slideNumber": 2,
+          "status": "CONFIRMED FROM POST",
+          "mediaType": "Event photography collage (1440x1350 uncompressed)",
+          "readableText": "Founder's council 2.0... (in search bar mockup)",
+          "visibleLogos": "Founder's Council blue banner projected on auditorium stage screen; Vasavi crest on lectern",
+          "visualObservation": "Central wide shot of packed VCE auditorium with students seated in red chairs; panel table set up before the stage; student speakers standing in aisles with microphones delivering pitches and debating. Inset photographs show student teams holding debate notes and engaging in heated discussions.",
+          "potentialWebsiteUse": "GALLERY, EVENTS, WHAT_WE_DO"
+        },
+        {
+          "slideNumber": "1, 3+",
+          "status": "COULD NOT ACCESS",
+          "mediaType": "Not stated",
+          "readableText": "Not stated",
+          "visibleLogos": "Not stated",
+          "visualObservation": "Dynamic client-side carousel slides restricted by Instagram session requirements.",
+          "potentialWebsiteUse": "Not stated"
+        }
+      ],
+      "eventOrInitiative": {
+        "title": "Founder's Council 2.0 (The Founders Council 2.0)",
+        "date": "10 September 2026 (Published September 13, 2026)",
+        "time": "Not stated in recap",
+        "venue": "VCE Auditorium (Visual observation: packed main auditorium)",
+        "organizer": "E-Cell VCE (Swayam E-Cell)",
+        "departmentWing": "Department not specified in source.",
+        "collaborators": [
+          "Zero Moblt",
+          "Fleckor Tech",
+          "Telangana Chronicle",
+          "IIC"
+        ],
+        "partners": [
+          "Zero Moblt",
+          "Fleckor Tech",
+          "Telangana Chronicle"
+        ],
+        "sponsors": "Not stated",
+        "purpose": "Provide conceptual pitches, candid mentorship, unfiltered strategic feedback from seasoned founders, idea validation, and early-stage execution navigation.",
+        "targetAudience": "Student founders, debaters, and innovators",
+        "format": "In-person boardroom debate simulation and panel review in packed auditorium",
+        "activities": [
+          "Conceptual pitches from student teams",
+          "Unfiltered panel feedback and breakdowns",
+          "Aisle-based debate and cross-questioning",
+          "Validating ideas and navigating early execution"
+        ],
+        "speakers": [
+          {
+            "name": "Panelists (Grateful to our panelists for their time and guidance)",
+            "designation": "Founders & Managing Partners",
+            "organization": "See Post #7 (Alfred Lazarus & Rudhvik Dharamkar)",
+            "role": "Judges / Panelists"
+          }
+        ],
+        "participants": "Not stated numerically (\"Thanks to everyone who pulled up to make the hall packed\")",
+        "winners": [],
+        "prizes": "Not stated",
+        "outcomes": "Intense validation of early-stage concepts with real-time feedback",
+        "registrationInfo": "Not stated"
+      },
+      "people": [],
+      "organizations": [
+        {
+          "name": "E-Cell VCE",
+          "type": "Student Entrepreneurship Cell",
+          "role": "Organizer"
+        },
+        {
+          "name": "Vasavi College of Engineering",
+          "type": "Institution",
+          "role": "Host"
+        }
+      ],
+      "departmentWork": [
+        {
+          "department": "Department not specified in source.",
+          "activity": "Executing large-scale simulation formats in the auditorium, live photography/videography, managing multi-member judging panels.",
+          "status": "CONFIRMED FROM POST"
+        }
+      ],
+      "whatWeDoEvidence": [
+        {
+          "stage": "VALIDATION / MENTORSHIP / STRATEGIC FEEDBACK",
+          "evidence": "\"From conceptual pitches to candid mentorship and strategic feedback, the event offered participants practical perspectives on validating ideas and navigating early-stage execution.\""
+        }
+      ],
+      "websiteUses": [
+        {
+          "target": "EVENTS",
+          "reason": "Comprehensive recap of Founder's Council 2.0."
+        },
+        {
+          "target": "GALLERY",
+          "reason": "Rich multi-photo collage showcasing intense auditorium debate and live pitching."
+        },
+        {
+          "target": "WHAT_WE_DO",
+          "reason": "Authentic proof of the 'Validation & Candid Mentorship' stage."
+        }
+      ],
+      "media": [
+        {
+          "slideNumber": 2,
+          "mediaType": "Event photography collage",
+          "shows": "Packed auditorium with students debating with microphones and panel judges",
+          "potentialWebsiteUse": "GALLERY / EVENTS"
+        }
+      ],
+      "possibleRelatedPosts": [
+        {
+          "relatedUrlIndex": 7,
+          "relatedShortcode": "DdB7KDXknxi",
+          "explanation": "Post #7 was the pre-event speaker reveal for this exact event, confirming Alfred Lazarus and Rudhvik Dharamkar as the guest panelists."
+        }
+      ],
+      "missingInformation": [
+        "Identities of winning teams/students",
+        "Specific breakdown of student attendance"
+      ]
+    },
+    {
+      "index": 10,
+      "postUrl": "https://www.instagram.com/p/DdUQWFNkjxL/?img_index=4&stkn=dzdrMzR2d3JmZ3Rj",
+      "shortcode": "DdUQWFNkjxL",
+      "status": "CONFIRMED FROM POST",
+      "metadata": {
+        "account": "Swayam - ED Cell (@ecellvce)",
+        "ownerUserId": "2937845962",
+        "postId": "Not stated",
+        "publicationDate": "September 15, 2026",
+        "postType": "Carousel (Outreach Initiative, URL specifies img_index=4)",
+        "likesCount": 150,
+        "commentsCount": 1,
+        "caption": "ecellvce\n🌱 Inspiring Young Minds, Fostering Innovation 💡\nAs part of its Outreach Program, the Swayam ED Cell, VCE visited Government High School, Round Table–Filmnagar, on 8th September to promote awareness about innovation, creativity, and entrepreneurial thinking among students.\nThrough interactive discussions and activities, students were encouraged to:\n🔍 Identify everyday problems and explore solutions\n💡 Develop creative and innovative ideas\n🌍 Understand the social and economic impact of innovation\n🚀 Learn about competitions, mentorship, and innovation opportunities\nAn initiative to encourage young minds to observe, think, innovate, and create. 🌟\n#SwayamEDCell\n#OutreachProgram\n#Innovation\n#Creativity\n#Entrepreneurship",
+        "hashtags": [
+          "#SwayamEDCell",
+          "#OutreachProgram",
+          "#Innovation",
+          "#Creativity",
+          "#Entrepreneurship"
+        ],
+        "taggedAccounts": [],
+        "mentionedOrganizations": [
+          "Government High School, Round Table–Filmnagar",
+          "Swayam ED Cell, VCE"
+        ],
+        "mentionedPeople": []
+      },
+      "slides": [
+        {
+          "slideNumber": 2,
+          "status": "CONFIRMED FROM POST",
+          "mediaType": "Official initiative cover poster (1440x1800 high-res)",
+          "readableText": "OUTREACH PROGRAM",
+          "visibleLogos": "Vasavi College of Engineering logo (top left), Swayam bulb logo (top center), INSTITUTION'S INNOVATION COUNCIL (Ministry of Education Initiative) logo (top right)",
+          "visualObservation": "Cover poster featuring a photo grid of Swayam student mentors interacting closely with government high school students in classrooms.",
+          "potentialWebsiteUse": "ABOUT, WHAT_WE_DO, EVENTS, GALLERY"
+        },
+        {
+          "slideNumber": "1, 3, 4+",
+          "status": "COULD NOT ACCESS",
+          "mediaType": "Not stated",
+          "readableText": "Not stated",
+          "visibleLogos": "Not stated",
+          "visualObservation": "Dynamic client-side carousel slides restricted by Instagram session requirements.",
+          "potentialWebsiteUse": "GALLERY"
+        }
+      ],
+      "eventOrInitiative": {
+        "title": "Outreach Program",
+        "date": "8th September 2026 (Published September 15, 2026)",
+        "time": "Not stated",
+        "venue": "Government High School, Round Table–Filmnagar",
+        "organizer": "Swayam ED Cell, VCE",
+        "departmentWing": "Department not specified in source.",
+        "collaborators": [
+          "Institution's Innovation Council (IIC)",
+          "Government High School, Round Table–Filmnagar"
+        ],
+        "partners": [
+          "Government High School, Round Table–Filmnagar"
+        ],
+        "sponsors": "Not stated",
+        "purpose": "Promote awareness about innovation, creativity, and entrepreneurial thinking among young school students.",
+        "targetAudience": "School students at Government High School Filmnagar",
+        "format": "In-person school visit with interactive classroom workshops and mentorship",
+        "activities": [
+          "Identifying everyday problems and exploring solutions",
+          "Developing creative and innovative ideas",
+          "Understanding social and economic impact of innovation",
+          "Learning about competitions, mentorship, and innovation opportunities"
+        ],
+        "speakers": [],
+        "participants": "Not stated (Visual observation shows multiple classrooms of students)",
+        "winners": [],
+        "prizes": "Not stated",
+        "outcomes": "Encouraged school students to observe, think, innovate, and create",
+        "registrationInfo": "Not stated"
+      },
+      "people": [],
+      "organizations": [
+        {
+          "name": "Government High School, Round Table–Filmnagar",
+          "type": "Government School",
+          "role": "Host School / Community Partner"
+        },
+        {
+          "name": "Institution's Innovation Council (IIC)",
+          "type": "Ministry of Education Initiative",
+          "role": "Institutional Collaborator"
+        },
+        {
+          "name": "Swayam ED Cell, VCE",
+          "type": "Student Entrepreneurship Cell",
+          "role": "Organizer"
+        },
+        {
+          "name": "Vasavi College of Engineering",
+          "type": "Parent Institution",
+          "role": "Parent Institution"
+        }
+      ],
+      "departmentWork": [
+        {
+          "department": "Department not specified in source.",
+          "activity": "Community outreach, grassroots entrepreneurial workshops, volunteer deployment to local government schools.",
+          "status": "CONFIRMED FROM POST"
+        }
+      ],
+      "whatWeDoEvidence": [
+        {
+          "stage": "OUTREACH / SOCIAL IMPACT / GRASSROOTS IDEATION",
+          "evidence": "Engaging school students outside the college campus to build early problem-identification habits and foster entrepreneurial mindset."
+        }
+      ],
+      "websiteUses": [
+        {
+          "target": "ABOUT",
+          "reason": "Highlights Swayam's social commitment and community-oriented outreach."
+        },
+        {
+          "target": "WHAT_WE_DO",
+          "reason": "Provides tangible evidence for the grassroots awareness and outreach branch of Swayam's work."
+        },
+        {
+          "target": "PARTNERSHIPS",
+          "reason": "Documents engagement with Government High School Filmnagar."
+        },
+        {
+          "target": "GALLERY",
+          "reason": "High-impact photographs of engineering students mentoring young school pupils."
+        }
+      ],
+      "media": [
+        {
+          "slideNumber": 2,
+          "mediaType": "Initiative cover poster / photo collage",
+          "shows": "Mentorship classroom sessions with school children",
+          "potentialWebsiteUse": "ABOUT / WHAT_WE_DO / GALLERY"
+        }
+      ],
+      "possibleRelatedPosts": [],
+      "missingInformation": [
+        "Student mentor names",
+        "Number of school pupils impacted"
+      ]
+    }
+  ]
+}

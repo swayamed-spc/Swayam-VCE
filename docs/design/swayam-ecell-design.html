@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Swayam E-Cell | Vasavi College of Engineering</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23ff9f1c'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<style>
+:root{--bg:#000;--fg:#f4f4f2;--mute:#8c8c8c;--line:#262626;--a:#ff9f1c;--ab:#000;--d:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif;--b:'DM Sans',system-ui,sans-serif;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}html{background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.6 var(--b)}
+a{color:inherit;text-decoration:none}h1,h2,h3{font-family:var(--d);font-weight:700;letter-spacing:-.02em;line-height:1.05;margin:0}
+h2{font-size:clamp(1.75rem,3.6vw,2.6rem)}h3{font-size:1.25rem}p{margin:0 0 .6em}
+:focus-visible{outline:2px solid var(--a);outline-offset:3px}
+.m{color:var(--mute)}.s{font-size:.9rem}.g{margin:16px 0}.mono{font-variant-numeric:tabular-nums;letter-spacing:.04em;color:var(--a);font-weight:700}.ul{text-decoration:underline;text-underline-offset:3px}
+.w{width:min(1120px,100% - 48px);margin-inline:auto}
+main,footer{position:relative;z-index:1}
+/* the spark: light and dots that follow the cursor */
+.spot,.dots{position:fixed;inset:0;pointer-events:none;z-index:0}
+.spot{background:radial-gradient(460px circle at var(--mx,70vw) var(--my,30vh),color-mix(in srgb,var(--a) 15%,transparent),transparent 70%)}
+.dots{background-image:radial-gradient(circle,var(--a) 1px,transparent 1.7px);background-size:26px 26px;opacity:.6;-webkit-mask-image:radial-gradient(240px circle at var(--mx,70vw) var(--my,30vh),#000,transparent);mask-image:radial-gradient(240px circle at var(--mx,70vw) var(--my,30vh),#000,transparent)}
+.nospot .spot,.nospot .dots{display:none}
+.btn{display:inline-block;font:700 1rem/1 var(--b);padding:15px 26px;border-radius:999px;background:var(--a);color:var(--ab);border:1px solid var(--a);cursor:pointer;transition:background .2s}
+.btn:hover{background:var(--fg);border-color:var(--fg);color:#000}.btn.gh{background:0;color:var(--fg);border-color:#444}.btn.gh:hover{border-color:var(--fg);color:var(--fg)}.btn.sm{padding:10px 18px;font-size:.95rem}
+.btn:disabled{opacity:.4;cursor:not-allowed}.btn:disabled:hover{background:var(--a);border-color:var(--a);color:var(--ab)}
+.lb{background:0;border:0;padding:0;color:var(--mute);font:500 .95rem var(--b);cursor:pointer}.lb:hover{color:var(--fg)}
+.acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+input{width:100%;padding:13px 14px;background:var(--bg);border:1px solid #3a3a3a;border-radius:10px;color:var(--fg);font:inherit;margin:6px 0 16px}input:focus{border-color:var(--a);outline:0}
+label{font-size:.95rem;color:var(--mute)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 32px}
+.chip{background:0;border:1px solid #3a3a3a;color:var(--mute);padding:7px 16px;border-radius:999px;cursor:pointer;font:500 .95rem var(--b)}.chip[aria-pressed=true]{background:var(--fg);border-color:var(--fg);color:#000}
+.panel{border:1px solid var(--line);border-radius:14px;padding:28px}
+.nav{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
+.ni{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font:700 1.4rem/1 var(--d);letter-spacing:-.02em}.brand small{font:500 .95rem var(--b);color:var(--mute);margin-left:4px}
+.links{display:flex;gap:28px;align-items:center}.links a:not(.btn){font-weight:500;font-size:.95rem;color:var(--mute)}.links a.on{color:var(--fg);box-shadow:0 2px 0 var(--a)}
+.mb{display:none;background:0;border:1px solid #3a3a3a;color:var(--fg);padding:8px 16px;border-radius:999px;font:500 .95rem var(--b);cursor:pointer}
+@media(max-width:760px){.mb{display:block}.links{display:none;position:absolute;top:64px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:20px;padding:24px}.links.open{display:flex}}
+/* hero */
+.hero{padding:clamp(56px,9vw,112px) 0 72px}.hero h1{font-size:clamp(3rem,9.5vw,8rem);letter-spacing:-.045em;max-width:11ch}
+.lead{color:var(--mute);font-size:1.2rem;max-width:50ch;margin:28px 0 0}
+.wd{display:inline-block}.lt{display:inline-block;animation:pop .7s cubic-bezier(.22,1,.36,1) both;animation-delay:calc(var(--i)*45ms)}
+.ide .lt{color:var(--mute)}.imp .lt{animation:pop .7s cubic-bezier(.22,1,.36,1) both,hue .6s ease both;animation-delay:calc(var(--i)*45ms),calc(var(--i)*45ms + 750ms)}
+@keyframes pop{from{opacity:0;transform:translateY(.35em) scale(.7)}}@keyframes hue{to{color:var(--a)}}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}}.swap{animation:rise .5s cubic-bezier(.22,1,.36,1) both}
+.hero .lead,.hero .iw,.hero .next{animation:rise .8s cubic-bezier(.22,1,.36,1) both}.hero .lead{animation-delay:1.2s}.hero .iw{animation-delay:1.4s}.hero .next{animation-delay:1.6s}
+.iw{margin-top:32px;max-width:600px}.idea{display:flex;gap:10px}.idea input{margin:0;flex:1}
+.chp{list-style:none;display:flex;gap:8px;flex-wrap:wrap;padding:0;margin:14px 0 0}.chp li{border:1px solid #3a3a3a;border-radius:999px;padding:4px 14px;font-size:.9rem;color:var(--mute)}.ok{color:var(--a);margin:12px 0 0}
+.next{margin-top:64px;border-top:1px solid var(--line);padding-top:28px;display:grid;grid-template-columns:1.1fr 1fr;gap:32px;align-items:end}.next h2{font-size:clamp(1.6rem,3vw,2.4rem);margin:6px 0}
+.count{display:flex;gap:clamp(16px,4vw,44px)}.count b{display:block;font:700 clamp(2.75rem,7vw,5.5rem)/1 var(--d);color:var(--a);font-variant-numeric:tabular-nums;letter-spacing:-.04em}.count span{color:var(--mute);font-size:.9rem}
+@media(max-width:800px){.next{grid-template-columns:1fr}.idea{flex-direction:column}}
+.sec{padding:72px 0;border-top:1px solid var(--line)}.sh{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:32px;flex-wrap:wrap}.sh a,.sh .lb{color:var(--mute)}.sh a:hover{color:var(--a)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:32px;margin:0}.facts div{display:flex;flex-direction:column}.facts dd{margin:0;font:700 clamp(2rem,4vw,3rem)/1 var(--d);letter-spacing:-.03em;font-variant-numeric:tabular-nums}.facts dt{color:var(--mute);margin-top:6px;order:2}
+/* journey: five poster words */
+.journey{height:340vh;border-top:1px solid var(--line);--p:0}
+.jr-s{position:sticky;top:64px;height:calc(100vh - 64px);display:flex;align-items:center}
+.jr-t{position:relative;height:56px;margin:36px 12px}.jr-l{position:absolute;left:0;right:0;top:7px;height:2px;background:var(--line)}
+.jr-l u{display:block;height:100%;background:var(--a);width:calc(var(--p)*100%);text-decoration:none}.jr-t ol{list-style:none;margin:0;padding:0}
+.jr-t li{position:absolute;top:0;left:calc(var(--k)*25%);transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--mute);font-size:.95rem;transition:color .3s}
+.jr-t li span{width:16px;height:16px;border-radius:50%;background:var(--bg);border:2px solid #444;transition:all .3s}.jr-t li.on{color:var(--fg)}.jr-t li.on span{background:var(--a);border-color:var(--a);transform:scale(1.25)}
+.jr-h{font-size:clamp(3.5rem,14vw,11rem);letter-spacing:-.05em;line-height:.95}.jr-h span{display:inline-block}.jr-h.fin span{color:var(--a)}.jr-d{font-size:1.2rem;max-width:44ch;margin:16px 0 20px}
+/* film strip */
+.strip{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:16px;scrollbar-width:thin;scrollbar-color:#444 transparent}
+.fr{flex:0 0 min(92%,640px);scroll-snap-align:start;border:1px solid var(--line);border-radius:14px;padding:28px;display:grid;grid-template-columns:auto 1fr;gap:12px 28px;align-items:end;min-height:300px;background:color-mix(in srgb,var(--bg) 70%,transparent)}
+.fr-d b{display:block;font:700 clamp(5rem,15vw,9.5rem)/.85 var(--d);color:var(--a);letter-spacing:-.05em}.fr-d span{color:var(--mute)}
+.fr h3{font-size:1.7rem;margin:4px 0}@media(max-width:560px){.fr{grid-template-columns:1fr}}
+.sc{display:flex;gap:8px}
+/* rows + stacked panels */
+.rows{border-top:1px solid var(--line)}
+.pn{border-bottom:1px solid var(--line)}.pn-h{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:72px 1fr auto;gap:10px 24px;align-items:center;padding:22px 0;width:100%}
+.pn-h:focus-visible{outline:2px solid var(--a);outline-offset:3px}
+.rd b{display:block;font:700 2rem/1 var(--d)}.rd span{color:var(--mute);font-size:.9rem}.pn-t h3{font-size:1.5rem}.pn-t span{color:var(--mute);font-size:.95rem}
+.rt{display:flex;gap:20px;align-items:center}.st{color:var(--mute)}.st.ok{color:var(--a)}.pn:hover h3,.pn.open h3{color:var(--a)}
+.more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s cubic-bezier(.22,1,.36,1)}.more>div{overflow:hidden;padding-left:96px}
+.pn.open .more{grid-template-rows:1fr}.pn.open .more>div{padding-bottom:24px}
+@media(hover:hover){.pn:hover .more{grid-template-rows:1fr}.pn:hover .more>div{padding-bottom:24px}}
+.more p{max-width:60ch;color:var(--mute)}
+@media(max-width:640px){.pn-h{grid-template-columns:56px 1fr;gap:8px 16px}.rt{grid-column:2}.more>div{padding-left:72px}}
+.rb{height:2px;background:var(--line);margin:0 0 -1px}.rb i,.bar i{display:block;height:100%;background:var(--a)}
+/* speakers */
+.sp{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.sp li{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid var(--line);transition:padding .25s,color .25s}
+.sp .sn{font:700 clamp(1.6rem,4vw,2.8rem)/1.1 var(--d);letter-spacing:-.03em;transition:color .25s}.sp li:hover .sn,.sp li:focus-visible .sn{color:var(--a)}.sp li:hover{padding-left:12px}
+.sp .av{display:none;width:48px;height:48px;border-radius:50%;background:var(--a);color:var(--ab);font:700 1.3rem var(--d);place-items:center;flex:none}
+@media(hover:none){.sp .av{display:grid}}
+.pt{position:fixed;left:0;top:0;width:150px;height:190px;border-radius:12px;background:linear-gradient(160deg,var(--a),var(--bg) 90%);border:1px solid var(--line);display:grid;place-items:center;font:700 4.5rem var(--d);color:var(--ab);opacity:0;pointer-events:none;z-index:120;transition:opacity .15s}.pt.on{opacity:1}
+/* tickers */
+.mq{overflow:hidden;border-block:1px solid var(--line);padding:18px 0;margin-bottom:-1px}.mq div{display:flex;gap:56px;width:max-content;animation:mq 45s linear infinite}.mq.rev div{animation-direction:reverse}.mq:hover div{animation-play-state:paused}
+.mq span{font:700 1.6rem var(--d);letter-spacing:-.02em;color:var(--mute);white-space:nowrap}@keyframes mq{to{transform:translateX(-50%)}}
+.two{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start}@media(max-width:900px){.two{grid-template-columns:1fr;gap:28px}}
+.faq{border-top:1px solid var(--line);max-width:760px}.faq details{border-bottom:1px solid var(--line);padding:20px 0}.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;font:600 1.15rem var(--d)}
+.faq summary::-webkit-details-marker{display:none}.faq summary::after{content:'+';color:var(--a)}.faq details[open] summary::after{content:'\2212'}.faq p{margin:12px 0 0;color:var(--mute);max-width:60ch}
+.page{padding:72px 0 96px;min-height:70vh}.page h1{font-size:clamp(2.5rem,7vw,5rem);letter-spacing:-.04em;margin-bottom:24px}.page h2{margin:56px 0 20px;font-size:clamp(1.5rem,3vw,2rem)}
+.intro{max-width:56ch;font-size:1.2rem;color:var(--mute)}.crumbs{color:var(--mute);font-size:.95rem;margin-bottom:16px}
+.split{display:grid;grid-template-columns:2fr 1fr;gap:56px;align-items:start}.split h2:first-child{margin-top:0}.sticky{position:sticky;top:96px}@media(max-width:900px){.split{grid-template-columns:1fr;gap:32px}.sticky{position:static}}
+.sched{margin:0;border-top:1px solid var(--line)}.sched div{display:grid;grid-template-columns:90px 1fr;padding:12px 0;border-bottom:1px solid var(--line)}.sched dt{color:var(--a);font-weight:700}.sched dd{margin:0}
+.list{padding-left:20px}.bar{height:2px;background:var(--line);margin:16px 0 8px}
+.tl{border-top:1px solid var(--line)}.tl>div{display:grid;grid-template-columns:100px 1fr;gap:8px 24px;padding:22px 0;border-bottom:1px solid var(--line)}.tl b{font:700 1.6rem/1.2 var(--d);color:var(--a)}.tl p{margin:0;color:var(--mute)}
+.team{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}.team li{display:grid;grid-template-columns:1.2fr 1fr .6fr;gap:12px;padding:16px 0;border-bottom:1px solid var(--line)}@media(max-width:640px){.team li{grid-template-columns:1fr}}
+.narrow{max-width:520px}.err{color:#ff6b6b;margin-bottom:12px}.ticket{max-width:420px;text-align:center}.qr{background:#fff;padding:14px;display:inline-block;margin:20px 0;border-radius:10px}.qr svg{display:block}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:100;display:grid;place-items:center;padding:16px}.modal .panel{background:var(--bg);width:min(460px,100%);max-height:90vh;overflow:auto}.modal h2{font-size:1.8rem;margin:0 0 14px!important}
+footer{border-top:1px solid var(--line);padding:56px 0 32px}.fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px;margin-bottom:40px}footer h3{font-size:1rem;margin-bottom:10px}footer p{margin:0 0 4px}
+.note{background:var(--a);color:var(--ab);text-align:center;font-size:.9rem;padding:6px 12px;position:relative;z-index:2}
+.sw{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:150}
+.swb{background:var(--fg);color:#000;border:0;border-radius:999px;padding:12px 18px;font:700 .95rem var(--b);cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.5)}
+.swp{max-height:80vh;overflow:auto;width:min(300px,calc(100vw - 32px));background:var(--bg);border:1px solid #444;border-radius:14px;padding:18px;box-shadow:0 8px 30px rgba(0,0,0,.6)}
+.swp h3{font-size:1rem;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}.swp .sl{font-size:.85rem;color:var(--mute);margin:0 0 8px}
+.sws{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:14px}
+.sws button{display:flex;align-items:center;gap:8px;background:0;border:1px solid #3a3a3a;border-radius:10px;color:var(--fg);padding:8px 10px;font:500 .85rem var(--b);cursor:pointer;text-align:left}.sws button[aria-pressed=true]{border-color:var(--fg)}
+.sws i{width:14px;height:14px;border-radius:50%;flex:none;border:1px solid #666}
+.swp label{display:flex;align-items:center;gap:10px;margin:0 0 12px}.swp input[type=color]{width:40px;height:32px;padding:0;margin:0;border-radius:8px;cursor:pointer}
+.swp code{display:block;font:500 .8rem/1.5 ui-monospace,Menlo,monospace;color:var(--mute);word-break:break-all}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style></head><body>
+<div class="note">Preview of the new Swayam frontend. Names, speakers and sponsors are placeholders and nothing is sent to a server.</div>
+<div class="spot" aria-hidden="true"></div><div class="dots" aria-hidden="true"></div>
+<div id="app"></div><div class="pt" id="pt" aria-hidden="true"></div>
+<div class="sw" id="sw"></div>
+<script>
+const club={tag:'From ideas to impact.',college:'Vasavi College of Engineering',email:'ecell@yourcollege.edu',spons:'sponsorship.ecell@yourcollege.edu',phone:'+91 00000 00000',addr:'Vasavi College of Engineering, Ibrahimbagh, Hyderabad, Telangana'};
+const stats=[[40,'+','Events hosted'],[600,'+','Members'],[5000,'+','Participants'],[6,'','Years running']];
+const faq=[['How do I register for an event?','Create an account, open the event and select Register. Paid events ask for payment before your ticket is issued.'],['Where do I find my ticket?','Log in and open My tickets. Show the QR code at the gate, on your phone or printed.'],['Do I need startup experience?','No. Every event is open to students at any level. Team size limits are listed under Rules on each event page.']];
+const stages=[['Ideate','It starts with one line. Write yours, then test it at a workshop.','#/events?cat=Workshop','See workshops'],['Meet','Founders and operators tell you what worked and what failed.','#/events?cat=Speaker','See talks'],['Pitch','Five minutes, a panel of founders and investors, real questions.','#/events?cat=Competition','See competitions'],['Build','Mentors and incubation support turn a pitch into a plan.','#/about','How we help teams'],['Impact','A venture people use, started by someone from Vasavi.','#/events','See all events']];
+const speakers=[['Speaker One','Founder, Company A'],['Speaker Two','CEO, Company B'],['Speaker Three','Investor, Fund C'],['Speaker Four','Co-founder, Company D'],['Speaker Five','Product head, Company E'],['Speaker Six','Alumnus and founder, Company F']];
+const sponsors=['Sponsor One','Sponsor Two','Sponsor Three','Sponsor Four','Sponsor Five','Sponsor Six','Sponsor Seven','Sponsor Eight'];
+const community=['Partner E-Cell One','Partner E-Cell Two','Partner E-Cell Three','Partner E-Cell Four','Partner E-Cell Five','Partner E-Cell Six','Partner E-Cell Seven','Partner E-Cell Eight'];
+const events=[
+{slug:'pitch-fest-2026',name:'Pitch Fest 2026',cat:'Competition',date:'2026-11-14',time:'10:00 AM',venue:'Main Auditorium',fee:0,cap:100,filled:42,about:'Our flagship pitch competition. Teams get five minutes to pitch to a panel of founders and investors.',rules:['Teams of 1 to 4 members','Five minute pitch, three minute Q&A','Decks must be submitted a day before'],sched:[['10:00','Check-in'],['11:00','Pitch rounds'],['15:00','Finals'],['17:00','Prizes']],prizes:'Prize pool of ₹50,000 and incubation support.'},
+{slug:'startup-workshop',name:'Startup 101 Workshop',cat:'Workshop',date:'2026-10-25',time:'2:00 PM',venue:'Seminar Hall B',fee:199,cap:80,filled:71,about:'A practical workshop on validating ideas, building an MVP and finding first customers.',rules:['Bring a laptop','Limited seats, first come first served'],sched:[['14:00','Idea validation'],['15:30','MVP building'],['16:30','Q&A']],prizes:'Certificate for every attendee.'},
+{slug:'founders-talk',name:'Founders Talk',cat:'Speaker',date:'2026-12-05',time:'4:00 PM',venue:'Open Air Theatre',fee:0,cap:300,filled:120,about:'Three founders talk about their first year, their mistakes and what they would do differently.',rules:['Entry with registration ticket','Gates close 15 minutes after start'],sched:[['16:00','Talks'],['17:30','Panel'],['18:00','Networking']],prizes:'No prizes. Plenty of connections.'},
+{slug:'ideathon',name:'Ideathon',cat:'Competition',date:'2026-09-10',time:'9:00 AM',venue:'Innovation Lab',fee:99,cap:60,filled:60,about:'A 12 hour sprint from problem to prototype.',rules:['Teams of 2 to 3'],sched:[['09:00','Kickoff'],['21:00','Demos']],prizes:'Cash prizes for the top three.'}];
+const team=[['Name Surname','President','CSE'],['Name Surname','Vice President','ECE'],['Name Surname','Events Head','ME'],['Name Surname','Design Head','IT']];
+const timeline=[['2020','Swayam founded','A small group of students starts the E-Cell.'],['2022','First Pitch Fest','Our first flagship competition with 200 participants.'],['2024','Incubation begins','The first student teams receive mentoring and seed support.'],['2026','Going digital','Registration, tickets and check-in move online.']];
+
+const D=d=>new Date(d+'T00:00:00'),fmt=d=>D(d).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'}),inr=n=>n?'₹'+n:'Free';
+const startOf=e=>{const m=/(\d+):(\d+)\s*(AM|PM)/i.exec(e.time),d=D(e.date);if(m)d.setHours(m[1]%12+(m[3].toUpperCase()=='PM'?12:0),+m[2]);return d};
+const isPast=e=>{const d=D(e.date);d.setDate(d.getDate()+1);return d<=new Date()};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ld=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}},sv=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch{}};
+let user=ld('sw_user',null),all=ld('sw_regs',[]),ideas=ld('sw_ideas',[]),menu=false,modal=null,err='',flt={q:'',cat:'All',price:'All'};
+const mine=()=>user?all.filter(r=>r.email==user.email):[];
+const taken=e=>e.filled+all.filter(r=>r.slug==e.slug).length;
+const statusOf=e=>{const t=taken(e);return isPast(e)?'Closed':t>=e.cap?'Sold out':t/e.cap>.8?'Closing soon':'Open'};
+const nav=p=>{location.hash=p};
+const path=()=>(location.hash.slice(1)||'/').split('?')[0].split('#')[0]||'/';
+const qs=()=>new URLSearchParams(location.hash.split('?')[1]||'');
+const upc=()=>events.filter(e=>!isPast(e)).sort((a,b)=>startOf(a)-startOf(b));
+const bar=(e,c)=>`<div class="${c}" role="img" aria-label="${taken(e)} of ${e.cap} seats taken"><i style="width:${Math.min(100,taken(e)/e.cap*100)}%"></i></div>`;
+const qr=t=>{try{const q=qrcode(0,'M');q.addData(t);q.make();return q.createSvgTag({cellSize:5,margin:0})}catch{return '<span class="mono">'+esc(t)+'</span>'}};
+const cdown=ms=>{ms=Math.max(0,ms);const v=[Math.floor(ms/864e5),Math.floor(ms%864e5/36e5),Math.floor(ms%36e5/6e4)];return `<div class="count" role="timer">${v.map((n,i)=>`<div><b>${String(n).padStart(2,'0')}</b><span>${['days','hours','minutes'][i]}</span></div>`).join('')}</div>`};
+const letters=t=>{let i=0;return t.split(' ').map(w=>`<span class="wd${w=='impact.'?' imp':w=='ideas'?' ide':''}">${[...w].map(c=>`<span class="lt" style="--i:${i++}">${c}</span>`).join('')}</span>`).join(' ')};
+
+/* ---- views ---- */
+const ideaOut=fresh=>{const wk=upc().find(e=>e.cat=='Workshop')||upc()[0],l=ideas.slice(-3).reverse();
+  return (fresh?`<p class="ok">Saved on this device. A good next step: ${wk?`<a class="ul" href="#/events/${wk.slug}">${esc(wk.name)}</a>`:'<a class="ul" href="#/events">see events</a>'}.</p>`:'')+(l.length?`<ul class="chp" aria-label="Your saved ideas">${l.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'')};
+const frame=e=>{const d=D(e.date);return `<article class="fr"><div class="fr-d"><b>${d.getDate()}</b><span>${d.toLocaleDateString('en-IN',{month:'long'})}</span></div><div><p class="m s" style="margin:0">${e.cat}</p><h3>${esc(e.name)}</h3><p class="m" style="margin:0">${e.time}, ${esc(e.venue)}</p><p class="m s">${inr(e.fee)}. ${statusOf(e)}.</p><div class="acts"><a class="btn sm" href="#/events/${e.slug}">View event</a></div></div></article>`};
+const journey=()=>`<section class="journey" id="jr"><div class="jr-s"><div class="w"><p class="m">Five steps from an idea to a venture. Keep scrolling.</p><div class="jr-t"><div class="jr-l"><u></u></div><ol>${stages.map((s,i)=>`<li style="--k:${i}"><span></span>${s[0]}</li>`).join('')}</ol></div><h2 class="jr-h"><span id="jr-n">${stages[0][0]}</span></h2><p class="jr-d m" id="jr-d">${stages[0][1]}</p><a class="btn sm gh" id="jr-a" href="${stages[0][2]}">${stages[0][3]}</a></div></div></section>`;
+const mq=(a,rev)=>`<div class="mq ${rev?'rev':''}" aria-hidden="true"><div>${[...a,...a].map(x=>`<span>${x}</span>`).join('')}</div></div>`;
+
+function home(){const up=upc(),n=up[0];
+  return `<section class="hero"><div class="w"><h1 aria-label="${club.tag}"><span aria-hidden="true">${letters(club.tag)}</span></h1>
+  <p class="lead">Swayam is the entrepreneurship cell of ${club.college}, Hyderabad. The name means self, and every venture here starts with one person and one line.</p>
+  <div class="iw"><form class="idea" id="idea"><input aria-label="Your idea in one line" maxlength="80" placeholder="Your idea, in one line" autocomplete="off"><button class="btn" type="submit">Save my idea</button></form><div id="idea-out">${ideaOut(false)}</div></div>
+  <div class="next">${n?`<div><p class="m">Next event</p><h2><a href="#/events/${n.slug}">${esc(n.name)}</a></h2><p class="m">${fmt(n.date)} at ${n.time}, ${esc(n.venue)}</p><div class="acts"><a class="btn" href="#/events/${n.slug}">Register</a><a class="btn gh" href="#/events">All events</a></div></div>${cdown(startOf(n)-Date.now())}`:'<div><h2>No events scheduled yet</h2></div>'}</div></div></section>
+  <section class="sec"><div class="w"><dl class="facts">${stats.map(s=>`<div><dt>${s[2]}</dt><dd data-n="${s[0]}" data-s="${s[1]}">0${s[1]}</dd></div>`).join('')}</dl></div></section>
+  ${journey()}
+  <section class="sec"><div class="w"><div class="sh"><h2>Coming up</h2><div class="sc"><button class="btn sm gh" data-sc="-1" aria-label="Previous events">Previous</button><button class="btn sm gh" data-sc="1" aria-label="Next events">Next</button></div></div>
+  ${up.length?`<div class="strip" tabindex="0" role="region" aria-label="Upcoming events, scroll sideways">${up.map(frame).join('')}</div>`:'<p class="m">Nothing is scheduled right now.</p>'}</div></section>
+  <section class="sec"><div class="w"><div class="sh"><h2>Voices from the stage</h2><span class="m s">Move over a name to meet them</span></div><ul class="sp">${speakers.map(s=>`<li tabindex="0" data-i="${s[0].split(' ').pop()[0]}"><span class="sn">${s[0]}</span><span class="m">${s[1]}</span><span class="av" aria-hidden="true">${s[0].split(' ').pop()[0]}</span></li>`).join('')}</ul></div></section>
+  <section class="sec"><div class="w"><div class="sh"><h2>Backed by</h2></div></div>${mq(sponsors,0)}${mq(community,1)}</section>
+  <section class="sec" id="partner"><div class="w two"><div><h2>Partner with us</h2><p class="m" style="margin-top:16px;max-width:46ch">Back the next set of founders from Vasavi, and meet the students building with them. Write to us and we will share how sponsors can take part.</p><div class="acts"><a class="btn" href="mailto:${club.spons}">Email the team</a></div></div>
+  <div class="panel"><p class="m s">Sponsorship contact</p><p class="mono" style="font-size:1.3rem">${club.phone}</p><p>${club.spons}</p><p class="m s" style="margin-top:20px">General queries</p><p>${club.email}</p></div></div></section>
+  <section class="sec"><div class="w"><div class="sh"><h2>Questions</h2></div><div class="faq">${faq.map(f=>`<details><summary>${f[0]}</summary><p>${f[1]}</p></details>`).join('')}</div></div></section>`}
+
+const pn=e=>{const d=D(e.date),s=statusOf(e),can=s=='Open'||s=='Closing soon',m=mine().find(r=>r.slug==e.slug);
+  return `<div class="pn"><button class="pn-h" data-pn aria-expanded="false"><span class="rd"><b>${d.getDate()}</b><span>${d.toLocaleDateString('en-IN',{month:'short'})}</span></span><span class="pn-t"><h3>${esc(e.name)}</h3><span>${e.cat}, ${esc(e.venue)}</span></span><span class="rt"><span>${inr(e.fee)}</span><span class="st ${s=='Open'?'ok':''}">${s}</span></span></button>${bar(e,'rb')}
+  <div class="more"><div><p>${e.about}</p><p class="s">${e.time}. ${taken(e)} of ${e.cap} seats taken.</p><div class="acts"><a class="btn sm gh" href="#/events/${e.slug}">View details</a>${m?`<a class="btn sm" href="#/ticket/${m.code}">View your ticket</a>`:can?`<button class="btn sm" data-reg="${e.slug}">Register</button>`:''}</div></div></div></div>`};
+function list(){
+  const cats=['All',...new Set(events.map(e=>e.cat))],q=flt.q.toLowerCase();
+  const l=events.filter(e=>e.name.toLowerCase().includes(q)&&(flt.cat=='All'||e.cat==flt.cat)&&(flt.price=='All'||(flt.price=='Free'?!e.fee:e.fee>0))).sort((a,b)=>startOf(a)-startOf(b));
+  return `<div class="w page"><h1>Events</h1><input id="q" placeholder="Search events" aria-label="Search events" value="${esc(flt.q)}" style="max-width:420px">
+  <div class="chips">${cats.map(c=>`<button class="chip" data-cat="${c}" aria-pressed="${flt.cat==c}">${c}</button>`).join('')}${['All','Free','Paid'].map(p=>`<button class="chip" data-price="${p}" aria-pressed="${flt.price==p}">${p=='All'?'Any price':p}</button>`).join('')}</div>
+  ${l.length?`<div class="rows">${l.map(pn).join('')}</div>`:'<p class="m">No events match. Clear a filter to see more.</p>'}</div>`}
+function detail(slug){
+  const e=events.find(x=>x.slug==slug);if(!e)return '<div class="w page"><h1>Event not found</h1><a class="btn" href="#/events">Back to events</a></div>';
+  const s=statusOf(e),m=mine().find(r=>r.slug==e.slug),can=s=='Open'||s=='Closing soon';
+  return `<div class="w page"><p class="crumbs"><a href="#/events">Events</a> / ${esc(e.name)}</p><h1>${esc(e.name)}</h1><div class="split"><div>
+  <h2>About</h2><p>${e.about}</p><h2>Schedule</h2><dl class="sched">${e.sched.map(x=>`<div><dt>${x[0]}</dt><dd>${x[1]}</dd></div>`).join('')}</dl>
+  <h2>Rules</h2><ul class="list">${e.rules.map(r=>`<li>${r}</li>`).join('')}</ul><h2>Prizes</h2><p>${e.prizes}</p></div>
+  <aside class="panel sticky"><p style="font:700 1.5rem var(--d);margin:0 0 4px">${inr(e.fee)}</p><p style="margin-bottom:2px">${fmt(e.date)} at ${e.time}</p><p class="m">${esc(e.venue)}</p>${bar(e,'bar')}<p class="m s g">${taken(e)} of ${e.cap} seats taken. ${s}.</p>
+  ${m?`<a class="btn" href="#/ticket/${m.code}">View your ticket</a>`:`<button class="btn" data-reg="${e.slug}" ${can?'':'disabled'}>${can?'Register':s}</button>`}</aside></div></div>`}
+function about(){return `<div class="w page"><h1>About Swayam</h1><p class="intro">Swayam is the entrepreneurship cell of ${club.college}. The word means self: we help students turn their own ideas into ventures through competitions, workshops, mentorship and a community of builders.</p>
+  <h2>Our journey</h2><div class="tl">${timeline.map(t=>`<div><b>${t[0]}</b><div><h3>${t[1]}</h3><p>${t[2]}</p></div></div>`).join('')}</div>
+  <h2>Core team</h2><ul class="team">${team.map(m=>`<li><b>${m[0]}</b><span>${m[1]}</span><span class="m">${m[2]}</span></li>`).join('')}</ul>
+  <p class="m" style="margin-top:40px">Questions? Write to <span class="mono">${club.email}</span></p></div>`}
+function auth(signup){return `<div class="w page narrow"><h1>${signup?'Sign up':'Log in'}</h1><form id="auth" data-signup="${signup?1:0}" novalidate>
+  ${signup?'<label for="n">Full name</label><input id="n" autocomplete="name"><label for="r">Roll number</label><input id="r">':''}
+  <label for="e">Email</label><input id="e" type="email" autocomplete="email"><label for="p">Password</label><input id="p" type="password" autocomplete="${signup?'new-password':'current-password'}">
+  ${err?`<p role="alert" class="err">${err}</p>`:''}<button class="btn" type="submit">${signup?'Create account':'Log in'}</button>
+  <p class="m" style="margin-top:20px">${signup?'Have an account? <a href="#/login" style="color:var(--fg)">Log in</a>':'New here? <a href="#/signup" style="color:var(--fg)">Sign up</a>'}</p></form></div>`}
+function dash(){const r=mine();
+  return `<div class="w page"><h1>Hi, ${esc(user.name.split(' ')[0])}</h1><h2 style="margin-top:0">My tickets</h2>
+  ${r.length?`<div class="rows">${r.map(x=>{const e=events.find(v=>v.slug==x.slug),d=D(e.date);return `<a class="pn-h" style="border-bottom:1px solid var(--line)" href="#/ticket/${x.code}"><span class="rd"><b>${d.getDate()}</b><span>${d.toLocaleDateString('en-IN',{month:'short'})}</span></span><span class="pn-t"><h3>${esc(e.name)}</h3><span>${esc(e.venue)}</span></span><span class="rt"><span class="mono">${x.code}</span></span></a>`}).join('')}</div>`:'<p class="m g">You have not registered for any event yet.</p><a class="btn" href="#/events">Browse events</a>'}</div>`}
+function ticket(code){const r=mine().find(x=>x.code==code),e=r&&events.find(v=>v.slug==r.slug);
+  if(!e)return '<div class="w page"><h1>Ticket not found</h1><p class="m g">This ticket does not exist for your account.</p><a class="btn" href="#/dashboard">Back to my tickets</a></div>';
+  return `<div class="w page"><div class="panel ticket"><p style="color:var(--a);font-weight:700">Confirmed</p><h1 style="font-size:2.4rem;margin:8px 0 12px">${esc(e.name)}</h1><p class="m">${fmt(e.date)} at ${e.time}<br>${esc(e.venue)}</p><div class="qr">${qr(r.code)}</div><p class="mono">${r.code}</p><p class="m">${esc(user.name)}</p></div></div>`}
+function modalHtml(){const e=events.find(x=>x.slug==modal.slug);if(!e)return '';let b;
+  if(modal.step=='confirm')b=`<h2>Confirm registration</h2><p><b>${esc(e.name)}</b></p><p class="m">${fmt(e.date)} at ${e.time}, ${esc(e.venue)}</p><p class="m">Registering as ${esc(user.name)} (${esc(user.email)})</p><p class="g">Fee: <b>${inr(e.fee)}</b></p><div class="acts"><button class="btn" data-next>${e.fee?'Continue to payment':'Register now'}</button><button class="btn gh" data-close>Cancel</button></div>`;
+  else if(modal.step=='pay')b=`<h2>Pay ${inr(e.fee)}</h2><p class="m g">Demo payment. Razorpay will be connected here by the backend team.</p><div class="acts"><button class="btn" data-pay>Pay ${inr(e.fee)}</button><button class="btn gh" data-close>Cancel</button></div>`;
+  else b=`<div style="text-align:center"><h2>You are registered</h2><p class="mono">${modal.code}</p><div class="qr">${qr(modal.code)}</div><div class="acts" style="justify-content:center"><button class="btn" data-view="${modal.code}">View ticket</button></div></div>`;
+  return `<div class="modal" data-close-bg><div class="panel" role="dialog" aria-modal="true" aria-label="Register for event">${b}</div></div>`}
+
+/* ---- render + behaviours ---- */
+let jrI=-1;
+const jr=()=>{const s=document.getElementById('jr');if(!s)return;const r=s.getBoundingClientRect(),p=Math.max(0,Math.min(1,-r.top/(r.height-innerHeight))),i=Math.min(stages.length-1,Math.round(p*(stages.length-1)));s.style.setProperty('--p',p);s.querySelectorAll('li').forEach((l,k)=>l.classList.toggle('on',k<=i));
+  if(i!==jrI){jrI=i;const n=document.getElementById('jr-n'),a=document.getElementById('jr-a');document.getElementById('jr-d').textContent=stages[i][1];a.href=stages[i][2];a.textContent=stages[i][3];n.textContent=stages[i][0];n.classList.remove('swap');void n.offsetWidth;n.classList.add('swap');n.parentNode.classList.toggle('fin',i==stages.length-1)}};
+const hook=()=>{const red=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('[data-n]').forEach(el=>{const n=+el.dataset.n,suf=el.dataset.s||'',set=v=>el.textContent=v.toLocaleString('en-IN')+suf;if(red)return set(n);
+    const io=new IntersectionObserver(([en])=>{if(!en.isIntersecting)return;io.disconnect();const t0=performance.now(),step=t=>{const k=Math.min(1,(t-t0)/1400);set(Math.round(n*(1-Math.pow(1-k,3))));if(k<1)requestAnimationFrame(step)};requestAnimationFrame(step)});io.observe(el)});
+  jrI=-1;jr()};
+function render(){
+  const p=path();let v;
+  if(p=='/')v=home();else if(p=='/events')v=list();else if(p.startsWith('/events/'))v=detail(p.slice(8));else if(p=='/about')v=about();
+  else if(p=='/login')v=auth(0);else if(p=='/signup')v=auth(1);
+  else if(p=='/dashboard'||p.startsWith('/ticket/')){if(!user){sessionStorage.setItem('from',p);return nav('/login')}v=p=='/dashboard'?dash():ticket(p.slice(8))}
+  else v='<div class="w page"><h1>Page not found</h1><a class="btn" href="#/">Go home</a></div>';
+  const on=x=>p==x||p.startsWith(x+'/')?'on':'';
+  document.getElementById('app').innerHTML=`<header class="nav"><div class="w ni"><a class="brand" href="#/">Swayam <small>E-Cell</small></a><button class="mb" data-menu aria-expanded="${menu}">${menu?'Close':'Menu'}</button>
+  <nav class="links ${menu?'open':''}"><a class="${on('/events')}" href="#/events">Events</a><a class="${on('/about')}" href="#/about">About</a><a href="#/#partner" data-partner>Partner</a>${user?`<a class="${on('/dashboard')}" href="#/dashboard">My tickets</a><button class="lb" data-out>Log out</button>`:'<a class="btn sm" href="#/login">Log in</a>'}</nav></div></header>
+  <main>${v}</main><footer><div class="w"><div class="fg"><div><p class="brand">Swayam <small>E-Cell</small></p><p class="m">${club.tag}</p><p class="m s">${club.college}, Hyderabad</p></div><div><h3>Explore</h3><p><a href="#/events">Events</a></p><p><a href="#/about">About and team</a></p></div><div><h3>Contact</h3><p class="m">${club.email}</p><p class="m">${club.phone}</p><p class="m">${club.addr}</p></div><div><h3>Sponsors</h3><p class="m">${club.spons}</p></div></div><p class="m s">© 2026 Swayam E-Cell. Made in Hyderabad.</p></div></footer>${modal?modalHtml():''}`;
+  const q=document.getElementById('q');if(q&&modal==null&&flt.focus){q.focus();q.setSelectionRange(q.value.length,q.value.length)}
+  hook()}
+const syncQ=()=>{const c=qs().get('cat');if(c)flt.cat=c};
+addEventListener('hashchange',()=>{menu=false;modal=null;err='';flt.focus=false;syncQ();const t=location.hash=='#/#partner';render();if(t){const el=document.getElementById('partner');el&&el.scrollIntoView({behavior:'smooth'})}else scrollTo(0,0)});
+addEventListener('scroll',jr,{passive:true});addEventListener('resize',jr);
+/* the spark follows the pointer */
+let px=0,py=0,raf=0;
+addEventListener('pointermove',e=>{px=e.clientX;py=e.clientY;if(!raf)raf=requestAnimationFrame(()=>{raf=0;const r=document.documentElement.style;r.setProperty('--mx',px+'px');r.setProperty('--my',py+'px');const pt=document.getElementById('pt');if(pt.classList.contains('on'))pt.style.transform=`translate(${Math.min(px+24,innerWidth-170)}px,${Math.max(8,py-95)}px)`})},{passive:true});
+document.addEventListener('mouseover',e=>{const li=e.target.closest('.sp li'),pt=document.getElementById('pt');if(li){pt.textContent=li.dataset.i;pt.style.transform=`translate(${Math.min(e.clientX+24,innerWidth-170)}px,${Math.max(8,e.clientY-95)}px)`;pt.classList.add('on')}else pt.classList.remove('on')});
+document.addEventListener('input',e=>{if(e.target.id=='q'){flt.q=e.target.value;flt.focus=true;render()}});
+document.addEventListener('keydown',e=>{if(e.key=='Escape'&&modal){modal=null;render()}});
+document.addEventListener('submit',e=>{const f=e.target;
+  if(f.id=='idea'){e.preventDefault();const i=f.querySelector('input'),v=i.value.trim();if(!v)return i.focus();ideas.push(v);ideas=ideas.slice(-5);sv('sw_ideas',ideas);i.value='';document.getElementById('idea-out').innerHTML=ideaOut(true);return}
+  if(f.id!='auth')return;e.preventDefault();
+  const g=i=>(document.getElementById(i)||{value:''}).value.trim(),su=f.dataset.signup=='1',em=g('e').toLowerCase(),pw=document.getElementById('p').value;
+  if(!/^\S+@\S+\.\S+$/.test(em))err='Enter a valid email address.';else if(pw.length<8)err='Password must be at least 8 characters.';else if(su&&!g('n'))err='Enter your full name.';else err='';
+  if(err)return render();
+  user={name:g('n')||em.split('@')[0],email:em,roll:g('r')};sv('sw_user',user);const fr=sessionStorage.getItem('from')||'/dashboard';sessionStorage.removeItem('from');nav(fr)});
+document.addEventListener('click',e=>{const t=e.target.closest('button,[data-close-bg]');if(!t)return;
+  if(t.hasAttribute('data-close-bg')&&e.target!==t)return;const d=t.dataset;
+  if('menu' in d){menu=!menu;render()}
+  else if('out' in d){user=null;sv('sw_user',null);menu=false;nav('/')}
+  else if('pn' in d){const p=t.closest('.pn'),o=p.classList.toggle('open');t.setAttribute('aria-expanded',o)}
+  else if(d.sc){const s=document.querySelector('.strip');if(s)s.scrollBy({left:+d.sc*Math.min(s.clientWidth*.9,660),behavior:'smooth'})}
+  else if(d.cat){flt.cat=d.cat;flt.focus=false;render()}else if(d.price){flt.price=d.price;flt.focus=false;render()}
+  else if(d.reg){if(!user){sessionStorage.setItem('from','/events/'+d.reg);nav('/login')}else{modal={slug:d.reg,step:'confirm'};render()}}
+  else if('next' in d||'pay' in d){const e2=events.find(x=>x.slug==modal.slug);if('next' in d&&e2.fee){modal.step='pay';return render()}
+    let r=mine().find(x=>x.slug==e2.slug);if(!r){const n=all.reduce((m,x)=>Math.max(m,+String(x.code).split('-').pop()||0),0)+1;r={code:'SWAYAM-2026-'+String(n).padStart(4,'0'),slug:e2.slug,email:user.email,at:Date.now()};all.push(r);sv('sw_regs',all)}
+    modal.step='done';modal.code=r.code;render()}
+  else if(d.view){const c=d.view;modal=null;nav('/ticket/'+c)}
+  else if('close' in d||'closeBg' in d){modal=null;render()}});
+setInterval(()=>{const c=document.querySelector('.count');if(c&&path()=='/'){const n=upc()[0];if(n)c.outerHTML=cdown(startOf(n)-Date.now())}},30000);
+
+/* ---- colour options ---- */
+const presets=[['Amber','#ff9f1c'],['Electric blue','#4d6bff'],['Red','#ff3b47'],['Mint','#3ddc97'],['Violet','#a78bfa'],['Cyan','#22d3ee']];
+const bgs=[['Pure black','#000000'],['Soft black','#0c0c0c']];
+let th=Object.assign({a:'#ff9f1c',bg:'#000000',open:false,s:true},ld('sw_theme',{}));
+const lum=h=>{const c=[1,3,5].map(i=>{const v=parseInt(h.substr(i,2),16)/255;return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4)});return .2126*c[0]+.7152*c[1]+.0722*c[2]};
+const ink=()=>lum(th.a)>.179?'#000':'#fff';
+const vars=()=>{const r=document.documentElement.style;r.setProperty('--a',th.a);r.setProperty('--bg',th.bg);r.setProperty('--ab',ink());document.body.classList.toggle('nospot',!th.s);sv('sw_theme',th)};
+const panel=()=>{document.getElementById('sw').innerHTML=th.open?`<div class="swp"><h3>Colour options <button class="lb" data-sw="toggle" aria-label="Close colour options">Close</button></h3><p class="sl">Accent</p><div class="sws">${presets.map(p=>`<button data-a="${p[1]}" aria-pressed="${th.a==p[1]}"><i style="background:${p[1]}"></i>${p[0]}</button>`).join('')}</div><label>Custom <input type="color" id="swc" value="${th.a}" aria-label="Custom accent colour"></label><p class="sl">Background</p><div class="sws">${bgs.map(p=>`<button data-bg="${p[1]}" aria-pressed="${th.bg==p[1]}"><i style="background:${p[1]}"></i>${p[0]}</button>`).join('')}</div><p class="sl">Cursor spark</p><div class="sws">${[['1','On'],['0','Off']].map(p=>`<button data-s="${p[0]}" aria-pressed="${(th.s?'1':'0')==p[0]}">${p[1]}</button>`).join('')}</div><p class="sl">Paste into index.css (button text: ${ink()=='#000'?'black':'white'}):</p><code>--accent:${th.a};<br>--bg:${th.bg};</code></div>`:'<button class="swb" data-sw="toggle">Colours</button>'};
+document.getElementById('sw').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const d=b.dataset;if(d.sw)th.open=!th.open;else if(d.a)th.a=d.a;else if(d.bg)th.bg=d.bg;else if(d.s!==undefined)th.s=d.s=='1';else return;vars();panel()});
+document.getElementById('sw').addEventListener('input',e=>{if(e.target.id=='swc'){th.a=e.target.value;vars();const c=document.querySelector('.swp code');if(c)c.innerHTML='--accent:'+th.a+';<br>--bg:'+th.bg+';'}});
+vars();panel();syncQ();render();
+</script></body></html>
