@@ -115,7 +115,15 @@ export default function About() {
                 <h3>{d.name}</h3>
                 <p>{d.mandate}</p>
                 <div className="dept-heads" aria-label={`Led by ${d.heads.map((h) => h.name).join(' and ')}`}>
-                  {d.heads.map((h) => <img key={h.name} src={h.img} alt="" loading="lazy" />)}
+                  {d.heads.map((h) =>
+                    h.img ? (
+                      <img key={h.name} src={h.img} alt="" loading="lazy" />
+                    ) : (
+                      <span key={h.name} className="dept-head-initial" title={h.name}>
+                        {h.name.charAt(0)}
+                      </span>
+                    )
+                  )}
                 </div>
                 <span className="more-link">Meet the team</span>
               </Link>

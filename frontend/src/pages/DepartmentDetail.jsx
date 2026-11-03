@@ -23,7 +23,15 @@ export default function DepartmentDetail() {
           <div className="heads">
             {d.heads.map((h) => (
               <div key={h.name} className="person">
-                <div className="person-photo"><img src={h.img} alt={h.name} loading="lazy" /></div>
+                <div className="person-photo">
+                  {h.img ? (
+                    <img src={h.img} alt={h.name} loading="lazy" />
+                  ) : (
+                    <div className="person-photo-initial" aria-label={h.name}>
+                      <span>{h.name.charAt(0)}</span>
+                    </div>
+                  )}
+                </div>
                 <h3>{h.name}</h3>
                 <p>{h.role}</p>
               </div>

@@ -25,12 +25,13 @@
 
 /* 2. Base ------------------------------------------------------------------------------------------------------ */
 *, *::before, *::after { box-sizing: border-box; }
-html { background: var(--bg); -webkit-text-size-adjust: 100%; }
+html { background: var(--bg); -webkit-text-size-adjust: 100%; overflow-x: hidden; }
 body {
   margin: 0; background: var(--bg); color: var(--fg);
   font: 400 17px/1.6 var(--b);
   padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
@@ -285,6 +286,333 @@ a.card:hover { border-color: #555; }
   .row-head { grid-template-columns: 56px minmax(0, 1fr); gap: 8px 16px; }
   .row-meta { grid-column: 2; }
   .row-more > div { padding-left: 72px; }
+}
+
+/* Subtle Animated Geometric Background */
+.geometric-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100vw;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.65;
+}
+
+/* Results header bar */
+.results-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0 0 20px;
+}
+.results-bar .result-count { margin: 0; }
+.chip--clear {
+  font-size: 0.82rem;
+  padding: 4px 12px;
+  color: var(--mute);
+  border: 1px dashed var(--line-strong);
+  background: transparent;
+  cursor: pointer;
+  border-radius: 999px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.chip--clear:hover {
+  color: var(--fg);
+  border-color: var(--a);
+}
+
+/* Responsive Event Cards Grid */
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+@media (max-width: 1024px) {
+  .event-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+}
+@media (max-width: 640px) {
+  .event-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+}
+
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animated Event Card */
+.event-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+  opacity: 1;
+  transform: translateY(0);
+  animation: cardEntrance 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: calc(var(--stagger, 0) * 35ms);
+  transition:
+    transform 0.25s var(--ease),
+    border-color 0.25s var(--ease),
+    box-shadow 0.25s var(--ease);
+  will-change: transform;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  border-color: color-mix(in srgb, var(--a) 60%, var(--line));
+  box-shadow: 0 16px 36px -12px rgba(255, 159, 28, 0.16), 0 0 0 1px rgba(255, 159, 28, 0.2);
+}
+
+.event-card:focus-visible {
+  outline: 2px solid var(--a);
+  outline-offset: 3px;
+}
+
+/* Card Image & Hover Zoom */
+.event-card-img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #080808;
+  border-bottom: 1px solid var(--line);
+}
+
+.event-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  display: block;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.event-card:hover .event-card-img img {
+  transform: scale(1.05);
+}
+
+/* Dark Fallback for events without authentic photo */
+.event-card-fallback {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: radial-gradient(ellipse at 50% 50%, color-mix(in srgb, var(--a) 8%, transparent) 0%, #070707 85%);
+  padding: 24px 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.event-card-fallback-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 40%, color-mix(in srgb, var(--a) 14%, transparent), transparent 70%);
+  pointer-events: none;
+}
+
+.event-card-fallback-icon {
+  width: 36px;
+  height: 36px;
+  color: var(--a);
+  opacity: 0.75;
+  margin-bottom: 12px;
+  z-index: 1;
+}
+
+.event-card-fallback-name {
+  font-family: var(--d);
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--fg);
+  z-index: 1;
+  max-width: 90%;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
+}
+
+/* Academic Year Badge */
+.event-card-year {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(10, 10, 10, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--line-strong);
+  color: #fff;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 3px 8px;
+  border-radius: 6px;
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Card Body */
+.event-card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.event-card-meta-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.event-card-cat {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--a) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--a) 32%, transparent);
+  color: var(--a);
+}
+
+.event-card-status {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--mute);
+}
+
+.event-card-status--active {
+  color: var(--a);
+}
+
+.event-card-title {
+  margin: 0 0 8px;
+}
+
+.event-card-title h3 {
+  font-size: 1.22rem;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.event-card-title a {
+  font-family: var(--d);
+  font-size: 1.22rem;
+  line-height: 1.25;
+  color: var(--fg);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.event-card:hover .event-card-title a {
+  color: var(--a);
+}
+
+.event-card-meta {
+  color: var(--mute);
+  font-size: 0.86rem;
+  line-height: 1.45;
+  margin: 0 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.event-card-summary {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #a0a0a0;
+  margin: 0 0 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Card Footer */
+.event-card-footer {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.84rem;
+}
+
+.event-card-participants {
+  color: var(--mute);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.82rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 58%;
+}
+
+.event-card-action {
+  font-family: var(--b);
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--a);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.2s ease;
+  margin-left: auto;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.event-card-action .arrow {
+  display: inline-block;
+  transition: transform 0.25s var(--ease);
+}
+
+.event-card:hover .event-card-action .arrow {
+  transform: translateX(5px);
 }
 
 /* 9. Event detail ---------------------------------------------------------------------------------------------- */
@@ -564,8 +892,42 @@ textarea { resize: vertical; }
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
   /* The marquee does not drift; Previous / Next, swiping and dragging still move it */
   .marquee { -webkit-mask-image: none; mask-image: none; }
+  .event-card { opacity: 1 !important; transform: none !important; }
+  .event-card:hover { transform: none !important; }
+  .event-card-img img, .event-card:hover .event-card-img img { transform: none !important; }
+  .event-card-action .arrow, .event-card:hover .event-card-action .arrow { transform: none !important; }
+  .geometric-bg { opacity: 0.25 !important; }
 }
 
 /* Long unbroken strings (emails, URLs) must wrap instead of widening the page on phones */
 .profile-head > div { min-width: 0; }
 .profile-head p, .ticket p, .ticket-row p { overflow-wrap: anywhere; }
+
+.dept-head-initial {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #181818;
+  border: 2px solid var(--surface);
+  color: var(--a);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: -8px;
+  font-size: 0.95rem;
+}
+
+.person-photo-initial {
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+  color: var(--a);
+  font-size: 3rem;
+  font-weight: 800;
+  border-radius: var(--radius-sm);
+}

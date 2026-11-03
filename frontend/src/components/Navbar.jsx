@@ -27,7 +27,7 @@ export default function Navbar() {
           {open ? 'Close' : 'Menu'}
         </button>
         <nav id="site-nav" className={`nav-links ${open ? 'open' : ''}`} aria-label="Main">
-          <NavLink to="/events" className={() => (pathname.startsWith('/events') ? 'active' : undefined)}>Events</NavLink>
+          <NavLink to="/events/past" className={() => (pathname.startsWith('/events') ? 'active' : undefined)}>Events</NavLink>
           <NavLink to="/about" className={() => (pathname.startsWith('/about') || pathname.startsWith('/teams') ? 'active' : undefined)}>About</NavLink>
           <Link to="/#partner">Partner</Link>
           {ready && user && (
