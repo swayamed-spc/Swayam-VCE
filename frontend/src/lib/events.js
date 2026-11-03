@@ -49,6 +49,7 @@ export function fromArchive(e) {
     poster: e.poster || e.gallery?.[0]?.img || null,
     phase: PHASES.includes(e.status) ? e.status : 'past',
     participants: e.participants || null,
+    academicYear: e.academicYear || null,
     capacity: null,
     taken: null,
     raw: e,
@@ -80,6 +81,7 @@ export function fromLive(e, availability = {}) {
     poster: null,
     phase: phaseOfLive(start),
     participants: null,
+    academicYear: e.academicYear || (e.date ? `${start.getFullYear()}-${start.getFullYear() + 1}` : null),
     capacity: seats?.capacity ?? e.capacity,
     taken: seats?.seatsTaken ?? null,
     raw: e,
@@ -107,12 +109,13 @@ export function byPhase(list, phase) {
   return items.sort((a, b) => (phase === 'past' ? b.start - a.start : a.start - b.start))
 }
 
-export function applyFilters(list, { q = '', category = 'All', price = 'All' }) {
+export function applyFilters(list, { q = '', category = 'All', price = 'All', academicYear = 'All' }) {
   const needle = q.trim().toLowerCase()
   return list.filter(
     (e) =>
-      (!needle || `${e.name} ${e.category} ${e.venue ?? ''} ${e.summary ?? ''}`.toLowerCase().includes(needle)) &&
+      (!needle || `${e.name} ${e.category} ${e.venue ?? ''} ${e.summary ?? ''} ${e.academicYear ?? ''}`.toLowerCase().includes(needle)) &&
       (category === 'All' || e.category === category) &&
-      (price === 'All' || (price === 'Free' ? !e.fee : e.fee > 0)),
+      (price === 'All' || (price === 'Free' ? !e.fee : e.fee > 0)) &&
+      (academicYear === 'All' || e.academicYear === academicYear),
   )
 }

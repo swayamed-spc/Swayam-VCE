@@ -1,8 +1,9 @@
-import { lazy, Suspense, useEffect } from 'react'
+import { Component, lazy, Suspense, useEffect } from 'react'
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Spotlight from './components/Spotlight'
+import GeometricBackground from './components/GeometricBackground'
 import { Loading } from './components/ui'
 import { useAuth } from './context/auth'
 import Home from './pages/Home'
@@ -20,6 +21,36 @@ import NotFound from './pages/NotFound'
 // The scanner pulls in the camera library, so it is only downloaded by staff who open it
 const Scanner = lazy(() => import('./pages/Scanner'))
 export const STAFF_ROLES = ['ADMIN', 'EVENT_HEAD']
+
+// Application error boundary preventing unhandled component errors from crashing the root DOM
+class ErrorBoundary extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { hasError: false, error: null }
+  }
+  static getDerivedStateFromError(error) {
+    return { hasError: true, error }
+  }
+  componentDidCatch(error, info) {
+    console.error('App ErrorBoundary caught:', error, info)
+  }
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="w page narrow" role="alert">
+          <span className="eyebrow">Something went wrong</span>
+          <h1 className="page-title">Temporary display issue</h1>
+          <p className="intro">An unexpected error occurred while loading this view.</p>
+          <div className="actions mt-md">
+            <button className="btn btn--sm" onClick={() => this.setState({ hasError: false })}>Try again</button>
+            <a className="btn btn--sm btn--ghost" href="/events/past">Go to Events Archive</a>
+          </div>
+        </div>
+      )
+    }
+    return this.props.children
+  }
+}
 
 // Pages that need a session. Waits for the session check, then sends logged-out visitors to /login and back again.
 function RequireAuth({ children }) {
@@ -60,7 +91,10 @@ function ScrollManager() {
   useEffect(() => {
     if (hash) {
       const el = document.getElementById(hash.slice(1))
-      if (el) return el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        return // explicitly return undefined, never the return value of scrollIntoView!
+      }
     }
     window.scrollTo(0, 0)
   }, [pathname, hash])
@@ -74,38 +108,45 @@ export default function App() {
       <ScrollManager />
       <ProfileGate />
       <Spotlight />
+      <GeometricBackground />
       <Navbar />
       <main id="main">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/events" element={<Events />} />
-          <Route path="/events/upcoming" element={<Events phase="upcoming" />} />
-          <Route path="/events/ongoing" element={<Events phase="ongoing" />} />
-          <Route path="/events/past" element={<Events phase="past" />} />
-          <Route path="/events/:id" element={<EventDetail />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/teams/:departmentId" element={<DepartmentDetail />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/welcome" element={<Welcome />} />
-          {/* Sign-in is Google-only; older links to the password pages land on the sign-in page */}
-          {['/signup', '/forgot-password', '/reset-password'].map((path) => (
-            <Route key={path} path={path} element={<Navigate to="/login" replace />} />
-          ))}
-          <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} />
-          <Route path="/tickets/:eventId" element={<RequireAuth><Ticket /></RequireAuth>} />
-          <Route path="/profile" element={<RequireAuth><Profile /></RequireAuth>} />
-          <Route
-            path="/admin/scan"
-            element={
-              <RequireAuth>
-                <RequireRole roles={STAFF_ROLES}>
-                  <Suspense fallback={<div className="w page"><Loading>Loading scanner</Loading></div>}><Scanner /></Suspense>
-                </RequireRole>
-              </RequireAuth>
-            }
-          />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <ErrorBoundary>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/events" element={<Events phase="past" />} />
+            <Route path="/events/upcoming" element={<Events phase="upcoming" />} />
+            <Route path="/events/ongoing" element={<Events phase="ongoing" />} />
+            <Route path="/events/past" element={<Events phase="past" />} />
+            <Route path="/events/:id" element={<EventDetail />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/teams/:departmentId" element={<DepartmentDetail />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/welcome" element={<Welcome />} />
+
+            {/* Sign-in is Google-only; older links to the password pages land on the sign-in page */}
+            {['/signup', '/forgot-password', '/reset-password'].map((path) => (
+              <Route key={path} path={path} element={<Navigate to="/login" replace />} />
+            ))}
+
+            <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} />
+            <Route path="/tickets/:eventId" element={<RequireAuth><Ticket /></RequireAuth>} />
+            <Route path="/profile" element={<RequireAuth><Profile /></RequireAuth>} />
+            <Route
+              path="/admin/scan"
+              element={
+                <RequireAuth>
+                  <RequireRole roles={STAFF_ROLES}>
+                    <Suspense fallback={<div className="w page"><Loading>Loading scanner</Loading></div>}>
+                      <Scanner />
+                    </Suspense>
+                  </RequireRole>
+                </RequireAuth>
+              }
+            />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </ErrorBoundary>
       </main>
       <Footer />
     </>

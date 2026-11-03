@@ -27,6 +27,10 @@ import tieIdeaCoachImg from '../assets/events/tie-idea-coach.webp'
 import future4ConclaveImg from '../assets/events/future-4-conclave.webp'
 import civengHackathonImg from '../assets/events/civeng-hackathon.webp'
 import trailblazerTalkImg from '../assets/events/trailblazer-talk.webp'
+import brandBlendImg from '../assets/events/brand-blend.webp'
+import designThinkingImg from '../assets/events/design-thinking-workshop.webp'
+import foundersNarrativeImg from '../assets/events/founders-narrative.webp'
+import esummit2025Img from '../assets/events/esummit-2025.webp'
 
 import {
   events as officialEvents,
@@ -81,7 +85,7 @@ export const institutionalBackbone = {
 
 export const stats = [
   { n: 28, s: '', l: 'Documented Events in Archive' },
-  { n: 8, s: '', l: 'Specialized Operational Wings' },
+  { n: 10, s: '', l: 'Specialized Operational Wings' },
   { n: 9, s: '', l: 'Official PDF Reports (2024–25)' },
   { n: 8, s: '+', l: 'Years of Institutional Legacy' },
 ]
@@ -242,7 +246,7 @@ export const leadership = [
   }
 ]
 
-// All 8 Functional Departments of Swayam
+// All 10 Functional Departments of Swayam
 export const departments = [
   {
     id: 'incubation',
@@ -486,6 +490,76 @@ export const departments = [
         role: 'Cross-departmental outreach mobilizing student innovators from CSE, ECE, EEE, Mechanical, Civil, and IT.',
         outcome: 'Broad, multidisciplinary participation in flagship collegiate challenges.',
         source: 'Swayam Student Relations Framework'
+      }
+    ]
+  },
+  {
+    id: 'design',
+    name: 'Design Wing',
+    shortName: 'Design',
+    mandate: 'Crafting the visual identity, brand systems, UI/UX aesthetics, and creative media collateral across all Swayam initiatives and event touchpoints.',
+    heads: [
+      { name: 'Masapeta Sneha Reddy', role: 'Head of Design' }
+    ],
+    responsibilities: [
+      'Visual storytelling, campaign graphic design, and brand guideline maintenance across all touchpoints',
+      'Designing promotional posters, stage banners, and digital marketing collateral for summits and conclaves',
+      'Conducting hands-on visual identity sprints, typography workshops, and brand design competitions',
+      'Collaborating with the Technology wing on UI design consistency and digital layout aesthetics'
+    ],
+    work: [
+      {
+        title: 'Brand-Craft Startup Identity & Design Sprint',
+        year: '2024–2025',
+        role: 'Facilitated visual brand design workshops and guided student teams during the Brand-Craft identity sprint.',
+        outcome: '70 participants across 28 teams designed startup visual identities and logo assets.',
+        source: 'Official VCE Brand Blend Report',
+        link: '/events/brand-blend-workshop',
+        image: brandBlendImg
+      },
+      {
+        title: 'Design Thinking & Rapid Prototyping Workshop',
+        year: '2019–2020',
+        role: 'Coordinated interactive design thinking sessions and observational ideation exercises mentored by Ms. Radhika Meenakshi Shankar.',
+        outcome: 'Student teams structured empathy observation maps and low-burn physical prototype concepts.',
+        source: 'Official VCE Design Thinking Report 2019',
+        link: '/events/design-thinking-workshop-2019',
+        image: designThinkingImg
+      }
+    ]
+  },
+  {
+    id: 'editorial',
+    name: 'Editorial Wing',
+    shortName: 'Editorial',
+    mandate: 'Directing official event documentation, press communications, student founder storytelling, and editorial archiving for the cell.',
+    heads: [
+      { name: 'Masapeta Sneha Reddy', role: 'Head of Editorial' }
+    ],
+    responsibilities: [
+      'Drafting comprehensive post-event reports, executive summaries, and official documentation for college administration',
+      'Curating, researching, and scripting founder interview dialogues and masterclass case studies',
+      'Authoring press releases, announcements, and cell communications for official media channels',
+      'Synthesizing actionable entrepreneurial takeaways and speaker lessons into written archives for student builders'
+    ],
+    work: [
+      {
+        title: 'Founder Series Editorial & Mindset Archiving',
+        year: '2025–2026',
+        role: 'Synthesized and documented core takeaways on founder-market fit and startup ideation from keynote speaker dialogues.',
+        outcome: 'Curated written masterclass archive preserved for campus entrepreneurs.',
+        source: 'Official Swayam Founder Series',
+        link: '/events/the-founders-narrative-2026',
+        image: foundersNarrativeImg
+      },
+      {
+        title: 'E-Summit 2025 Multi-Track Session Documentation',
+        year: '2024–2025',
+        role: 'Comprehensive reporting, speaker documentation, and session archiving across multi-day conclaves.',
+        outcome: 'Documented 11 session tracks, participant metrics, and competition outcomes in official institutional archives.',
+        source: 'Official VCE E-Summit Documentation',
+        link: '/events/esummit-2025',
+        image: esummit2025Img
       }
     ]
   }
